@@ -20,6 +20,12 @@
         <td>{{$encadrant->matricule}}</td>
         <td>{{$encadrant->email}}</td>
         <td>{{$encadrant->structure_affectation_id}}</td>
+        <td>
+            <form action ="{{route('encadrant.edit', $encadrant->id)}}" method="GET">
+                @csrf
+               <button class="btn btn-success">Modifier</button>
+                </form> 
+        </td>
     </tr> 
 @endforeach
 </table>

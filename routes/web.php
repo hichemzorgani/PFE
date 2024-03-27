@@ -18,6 +18,8 @@ Route::get('/compte',[CompteController::class,'index'])->name('compte.index');
 
 Route::get('/compte/create',[CompteController::class,'create'])->name('compte.create');
 Route::post('/compte/store',[CompteController::class,'store'])->name('compte.store');
+Route::get('/compte/{compte}/edit',[CompteController::class,'edit'])->name('compte.edit');
+Route::put('/compte/{compte}',[CompteController::class,'update'])->name('compte.update');
 
 Route::get('affectation',[AffectationController::class,'index'])->name('affectation.index');
 
@@ -28,6 +30,8 @@ Route::get('universite',[UniversiteController::class,'index'])->name('universite
 
 Route::get('/universite/create',[UniversiteController::class,'create'])->name('universite.create');
 Route::post('/universite/store',[UniversiteController::class,'store'])->name('universite.store');
+Route::get('/universite/{universite}/edit',[UniversiteController::class,'edit'])->name('universite.edit');
+Route::put('/universite/{universite}',[UniversiteController::class,'update'])->name('universite.update');
 
 Route::get('ecole',[ecoleController::class,'index'])->name('ecole.index');
 
@@ -35,9 +39,10 @@ Route::get('/ecole/create',[ecoleController::class,'create'])->name('ecole.creat
 Route::post('/ecole/store',[ecoleController::class,'store'])->name('ecole.store');
 
 Route::get('encadrant',[EncadrantController::class,'index'])->name('encadrant.index');
-
 Route::get('/encadrant/create',[EncadrantController::class,'create'])->name('encadrant.create');
 Route::post('/encadrant/store',[EncadrantController::class,'store'])->name('encadrant.store');
+Route::get('/encadrant/{encadrant}/edit',[EncadrantController::class,'edit'])->name('encadrant.edit');
+Route::put('/encadrant/{encadrant}',[EncadrantController::class,'update'])->name('encadrant.update');
 
 Route::get('/login', [LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');

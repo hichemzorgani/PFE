@@ -49,4 +49,18 @@ class CompteController extends Controller
 
        return redirect()->route('compte.index');
     }
+    public function edit (Compte $compte){
+        return view('Layouts/modifier/editcompte', compact('compte'));
+    }
+    public function update (Request $request , Compte $compte){
+        $validatedData = $request->validate([
+            'utilisateur' => 'required',
+            'password' => 'required',
+            'type_compte' => 'required',
+            'structure_iap_id' => 'required',   
+        ]);
+        $compte->fill($validatedData)->save();
+        return to_route('compte.index');
+    }
+
 }

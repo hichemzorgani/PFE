@@ -35,7 +35,17 @@ class UniversiteController extends Controller
         
         return redirect()->route('universite.index');
     }
-    
+    public function edit (Universite $universite){
+        return view('Layouts/modifier/editUniversite', compact('universite'));
+
+    }
+    public function update (Request $request , Universite $universite){
+        $validatedData = $request->validate([
+            'nom' => 'required',
+        ]);
+        $universite->fill($validatedData)->save();
+        return to_route('universite.index');
+    }
         
     
 }

@@ -19,6 +19,12 @@
         <td>{{$compte->password}}</td>
         <td>{{$compte->type_compte}}</td>
         <td>{{$compte->structure_iap_id}}</td>
+        <td>
+            <form action ="{{route('compte.edit', $compte->id)}}" method="GET">
+                @csrf
+               <button class="btn btn-success">Modifier</button>
+                </form> 
+        </td>
     </tr> 
 @endforeach
 </table>
