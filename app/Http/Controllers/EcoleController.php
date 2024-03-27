@@ -33,4 +33,14 @@ class EcoleController extends Controller
         
         return redirect()->route('ecole.index');
     }
+    public function edit (Ecole $ecole){
+        return view('Layouts/modifier/editecole', compact('ecole'));
+    }
+    public function update (Request $request , Ecole $ecole){
+        $validatedData = $request->validate([
+            'nom'=>'required',
+        ]);
+        $ecole->fill($validatedData)->save();
+        return to_route('ecole.index');
+    }
 }

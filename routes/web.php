@@ -37,6 +37,8 @@ Route::get('ecole',[ecoleController::class,'index'])->name('ecole.index');
 
 Route::get('/ecole/create',[ecoleController::class,'create'])->name('ecole.create');
 Route::post('/ecole/store',[ecoleController::class,'store'])->name('ecole.store');
+Route::get('/ecole/{ecole}/edit',[EcoleController::class,'edit'])->name('ecole.edit');
+Route::put('/ecole/{ecole}',[EcoleController::class,'update'])->name('ecole.update');
 
 Route::get('encadrant',[EncadrantController::class,'index'])->name('encadrant.index');
 Route::get('/encadrant/create',[EncadrantController::class,'create'])->name('encadrant.create');

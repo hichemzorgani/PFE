@@ -12,6 +12,12 @@
     <tr>
         <td>{{$ecole->id}}</td>
         <td>{{$ecole->nom}}</td>
+        <td>
+            <form action ="{{route('ecole.edit', $ecole->id)}}" method="GET">
+                @csrf
+               <button class="btn btn-success">Modifier</button>
+                </form> 
+        </td>
     </tr> 
 @endforeach
 </table>
