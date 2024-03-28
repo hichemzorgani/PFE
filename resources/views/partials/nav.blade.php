@@ -29,13 +29,13 @@
                 <a href="{{ route ('compte.index') }}" class="nav-link text-white">Gérer les comptes</a>
             </li>
             <li class="nav-item nav-link">
-                <a href="" class="nav-link text-white">Consulter les Statistiques</a>
+                <a href="{{ route ('statistique.index') }}" class="nav-link text-white">Consulter les Statistiques</a>
             </li>
             <li class="nav-item nav-link">
-                <a href="" class="nav-link text-white">Connecter en tant que (ADMIN)</a>
+                <a href="{{ route ('statistique2.index') }}" class="nav-link text-white">Connecter en tant que (ADMIN)</a>
             </li>
             <li class="nav-item nav-link">
-                <a href="" class="nav-link text-white">Se déconnecter</a>
+                <a href="{{ route ('login.show') }}" class="nav-link text-white">Se déconnecter</a>
             </li>  
         </div>
     </nav>
