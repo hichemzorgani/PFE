@@ -41,7 +41,20 @@ class AffectationController extends Controller
         
         return redirect()->route('affectation.index');
     }
+    public function edit (Affectation $affectation){
+        return view('Layouts/modifier/editaffectation', compact('affectation'));
+    }
+    public function update (Request $request , Affectation $affectation){
+        $validatedData = $request->validate([
+            'nom'=>'required',
+            'type' => 'required',
+            'quota_pfe' => 'required',
+            'quota_im' => 'required',
+            'structure_iap_id' => 'required',
+        ]);
+        $affectation->fill($validatedData)->save();
+        return to_route('affectation.index');
+    }
     
         
-    
 }

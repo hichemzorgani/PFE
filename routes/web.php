@@ -25,6 +25,8 @@ Route::get('affectation',[AffectationController::class,'index'])->name('affectat
 
 Route::get('/affectation/create',[AffectationController::class,'create'])->name('affectation.create');
 Route::post('/affectation/store',[AffectationController::class,'store'])->name('affectation.store');
+Route::get('/affectation/{affectation}/edit',[AffectationController::class,'edit'])->name('affectation.edit');
+Route::put('/affectation/{affectation}',[AffectationController::class,'update'])->name('affectation.update');
 
 Route::get('universite',[UniversiteController::class,'index'])->name('universite.index');
 

@@ -20,6 +20,13 @@
         <td>{{$affectation->quota_pfe}}</td>
         <td>{{$affectation->quota_im}}</td>
         <td>{{$affectation->structure_iap_id}}</td>
+        <td>
+            <form action ="{{route('affectation.edit', $affectation->id)}}" method="GET">
+                @csrf
+               <button class="btn btn-success">Modifier</button>
+                </form> 
+        </td>
+        
     </tr> 
 @endforeach
 </table>
