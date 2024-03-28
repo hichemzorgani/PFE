@@ -1,6 +1,33 @@
 
 @include('partials.nav')
 <div class="container mt-2">
+    <hr>
+    <h2>Ajouter compte</h2>
+    <hr>
+  <form action="{{ route('compte.store') }}" method="POST">
+    @csrf 
+    <div class="form-group">
+        <label>Utilisateur</label>
+        <input type="text" class="form-control" name="utilisateur" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Type de compte</label>
+        <input type="text" class="form-control" name="type_compte" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>ID école</label>
+        <input type="text" class="form-control" name="structure_iap_id" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+    </div>
+</form>
+</div>
+<div class="container mt-2">
 <hr>
     <h2>Tous les comptes</h2>
 <hr>
@@ -35,7 +62,6 @@
     </tr> 
 @endforeach
 </table>
-<a href="/compte/create" class="btn btn-primary">+ Nouveau Compte</a> 
 </div>
 
 

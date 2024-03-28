@@ -66,15 +66,14 @@ Route::delete('/encadrant/{encadrant}',[EncadrantController::class,'destroy'])->
 Route::get('/login', [LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 
-Route::get('/statistique',[StatistiqueController::class,'index'])->name('statistique.index');
-
+Route::get('/statistique', [StatistiqueController::class,'index'])->name('statistique.index');
 
 
 // -----------------nav2 (admin)----------------------------------------------------------------------------------------------------------
 
 Route::get('/stage',[StageController::class,'index'])->name('stage.index');
 
-Route::get('/statistique',[StatistiquesController::class,'index'])->name('statistique2.index');
+Route::get('/statistique2',[StatistiquesController::class,'index'])->name('statistique2.index');
 
 
 

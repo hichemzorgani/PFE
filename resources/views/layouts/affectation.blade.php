@@ -1,5 +1,36 @@
 @include('partials.nav')
 <div class="container mt-2">
+    <hr>
+    <h2>Ajouter Affectation</h2>
+    <hr>
+  <form action="{{ route('affectation.store') }}" method="POST">
+    @csrf 
+    <div class="form-group">
+        <label>Nom</label>
+        <input type="text" class="form-control" name="nom" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Type</label>
+        <input type="password" class="form-control" name="type" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Quota projet fin d'étude</label>
+        <input type="text" class="form-control" name="quota_pfe" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Quota immersion</label>
+        <input type="text" class="form-control" name="quota_im" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>ID école</label>
+        <input type="text" class="form-control" name="structure_iap_id" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+    </div>
+</form>
+</div>
+<div class="container mt-2">
 <hr>
     <h2>Toutes les directions</h2>
 <hr>
@@ -37,5 +68,4 @@
     </tr> 
 @endforeach
 </table>
-<a href="/affectation/create" class="btn btn-primary">+ Nouvelle Affectation</a> 
 </div>

@@ -1,12 +1,41 @@
 @include('partials.nav')
+<style>
+    *{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
 <div class="container mt-2">
-<hr>
-    <h2>Toutes les écoles</h2>
-<hr>
-<table class="table">
+    <style>
+        #div{
+        margin: 5px; 
+        border: 2px solid black; 
+        border-radius: 10px; 
+        padding: 10px;
+    }
+    </style>
+    <h3>Ajouter une nouvelle école :)</h3> 
+    <div id="div">
+        <form action="{{ route('ecole.store') }}" method="POST">
+            @csrf 
+            <div class="form-group">
+                <h5>Nom</h5>
+                <input type="text" class="form-control" name="nom" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">
+            </div>    
+        </form>
+    </div>
+    
+
+    <h3>Listes des écoles</h3>
+
+<table class="table table-dark table-striped table-hover">
     <tr>
         <th>ID</th>
         <th>Nom</th>
+        <th>Modification</th>
+        <th>Supression</th>
     </tr>    
 @foreach ($ecoles as $ecole)
     <tr>
@@ -28,5 +57,4 @@
     </tr> 
 @endforeach
 </table>
-<a href="/ecole/create" class="btn btn-primary">+ Nouvelle école</a> 
 </div>
