@@ -24,6 +24,11 @@
                         <input type="password" id ="password" name="password" autocomplete="off" required>
                         <label for="">Mot de passe</label>
                     </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="text" id ="type_compte" name="type_compte" autocomplete="off" required>
+                        <label for="">Type de compte</label>
+                    </div>
                     <button name ="submit" >Log in</button>
                 </form>
             </div>
@@ -53,8 +58,8 @@ section{
 }
 .form-box{
     position: relative;
-    width: 400px;
-    height: 380px;
+    width: 420px;
+    height: 450px;
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
     border-radius: 20px;

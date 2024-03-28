@@ -8,12 +8,18 @@ use App\Http\Controllers\AffectationController;
 use App\Http\Controllers\UniversiteController;
 use App\Http\Controllers\EcoleController;
 use App\Http\Controllers\EncadrantController;
+use App\Http\Controllers\StageController;
+use App\Http\Controllers\ConsulterStageController;
+use App\Http\Controllers\StatistiquesController;
+use App\Http\Controllers\StatistiqueController;
 
 
 
 
+// ------------nav (admin applicatif)------------------------------------------------------------------------------------------------------
 
 Route::get('/home',[HomeController::class,'index']);
+
 Route::get('/compte',[CompteController::class,'index'])->name('compte.index');
 
 Route::get('/compte/create',[CompteController::class,'create'])->name('compte.create');
@@ -59,6 +65,26 @@ Route::delete('/encadrant/{encadrant}',[EncadrantController::class,'destroy'])->
 
 Route::get('/login', [LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
+
+Route::get('/statistique',[StatistiqueController::class,'index'])->name('statistique.index');
+
+
+
+// -----------------nav2 (admin)----------------------------------------------------------------------------------------------------------
+
+Route::get('/stage',[StageController::class,'index'])->name('stage.index');
+
+Route::get('/statistique',[StatistiquesController::class,'index'])->name('statistique2.index');
+
+
+
+//----------------- nav3 (user)-----------------------------------------------------------------------------------------------------------
+
+Route::get('/ConsulterStage',[ConsulterStageController::class,'index'])->name('consulterstage.index');
+
+
+
+
 
 
 
