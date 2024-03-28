@@ -55,6 +55,9 @@ class AffectationController extends Controller
         $affectation->fill($validatedData)->save();
         return to_route('affectation.index');
     }
-    
+    public function destroy(Affectation $affectation){
+        $affectation->delete();
+        return to_route('affectation.index');
+    }
         
 }

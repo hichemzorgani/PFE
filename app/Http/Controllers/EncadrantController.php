@@ -55,4 +55,8 @@ class EncadrantController extends Controller
         $encadrant->fill($validatedData)->save();
         return to_route('encadrant.index');
     }
+    public function destroy(Encadrant $encadrant){
+        $encadrant->delete();
+        return to_route('encadrant.index');
+    }
 }

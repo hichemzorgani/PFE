@@ -62,5 +62,9 @@ class CompteController extends Controller
         $compte->fill($validatedData)->save();
         return to_route('compte.index');
     }
+    public function destroy(Compte $compte){
+        $compte->delete();
+        return to_route('compte.index');
+    }
 
 }

@@ -20,6 +20,8 @@ Route::get('/compte/create',[CompteController::class,'create'])->name('compte.cr
 Route::post('/compte/store',[CompteController::class,'store'])->name('compte.store');
 Route::get('/compte/{compte}/edit',[CompteController::class,'edit'])->name('compte.edit');
 Route::put('/compte/{compte}',[CompteController::class,'update'])->name('compte.update');
+Route::delete('/compte/{compte}',[CompteController::class,'destroy'])->name('compte.destroy');
+
 
 Route::get('affectation',[AffectationController::class,'index'])->name('affectation.index');
 
@@ -27,6 +29,7 @@ Route::get('/affectation/create',[AffectationController::class,'create'])->name(
 Route::post('/affectation/store',[AffectationController::class,'store'])->name('affectation.store');
 Route::get('/affectation/{affectation}/edit',[AffectationController::class,'edit'])->name('affectation.edit');
 Route::put('/affectation/{affectation}',[AffectationController::class,'update'])->name('affectation.update');
+Route::delete('/affectation/{affectation}',[AffectationController::class,'destroy'])->name('affectation.destroy');
 
 Route::get('universite',[UniversiteController::class,'index'])->name('universite.index');
 
@@ -34,6 +37,9 @@ Route::get('/universite/create',[UniversiteController::class,'create'])->name('u
 Route::post('/universite/store',[UniversiteController::class,'store'])->name('universite.store');
 Route::get('/universite/{universite}/edit',[UniversiteController::class,'edit'])->name('universite.edit');
 Route::put('/universite/{universite}',[UniversiteController::class,'update'])->name('universite.update');
+Route::delete('/universite/{universite}',[UniversiteController::class,'destroy'])->name('universite.destroy');
+
+
 
 Route::get('ecole',[ecoleController::class,'index'])->name('ecole.index');
 
@@ -41,12 +47,15 @@ Route::get('/ecole/create',[ecoleController::class,'create'])->name('ecole.creat
 Route::post('/ecole/store',[ecoleController::class,'store'])->name('ecole.store');
 Route::get('/ecole/{ecole}/edit',[EcoleController::class,'edit'])->name('ecole.edit');
 Route::put('/ecole/{ecole}',[EcoleController::class,'update'])->name('ecole.update');
+Route::delete('/ecole/{ecole}',[EcoleController::class,'destroy'])->name('ecole.destroy');
+
 
 Route::get('encadrant',[EncadrantController::class,'index'])->name('encadrant.index');
 Route::get('/encadrant/create',[EncadrantController::class,'create'])->name('encadrant.create');
 Route::post('/encadrant/store',[EncadrantController::class,'store'])->name('encadrant.store');
 Route::get('/encadrant/{encadrant}/edit',[EncadrantController::class,'edit'])->name('encadrant.edit');
 Route::put('/encadrant/{encadrant}',[EncadrantController::class,'update'])->name('encadrant.update');
+Route::delete('/encadrant/{encadrant}',[EncadrantController::class,'destroy'])->name('encadrant.destroy');
 
 Route::get('/login', [LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');

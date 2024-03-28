@@ -43,4 +43,8 @@ class EcoleController extends Controller
         $ecole->fill($validatedData)->save();
         return to_route('ecole.index');
     }
+    public function destroy(Ecole $ecole){
+        $ecole->delete();
+        return to_route('ecole.index');
+    }
 }

@@ -25,6 +25,13 @@
                <button class="btn btn-success">Modifier</button>
                 </form> 
         </td>
+        <td>
+            <form action ="{{route('compte.destroy', $compte->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+               <button class="btn btn-danger">Supprimer</button>
+                </form> 
+        </td>
     </tr> 
 @endforeach
 </table>

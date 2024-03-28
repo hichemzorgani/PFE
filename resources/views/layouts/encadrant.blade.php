@@ -26,6 +26,13 @@
                <button class="btn btn-success">Modifier</button>
                 </form> 
         </td>
+        <td>
+            <form action ="{{route('encadrant.destroy', $encadrant->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+               <button class="btn btn-danger">Supprimer</button>
+                </form> 
+        </td>
     </tr> 
 @endforeach
 </table>

@@ -1,7 +1,7 @@
 @include('partials.nav')
 <div class="container mt-2">
 <hr>
-    <h2>Tous les directions</h2>
+    <h2>Toutes les directions</h2>
 <hr>
 <table class="table">
     <tr>
@@ -26,9 +26,16 @@
                <button class="btn btn-success">Modifier</button>
                 </form> 
         </td>
+        <td>
+            <form action ="{{route('affectation.destroy', $affectation->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+               <button class="btn btn-danger">Supprimer</button>
+                </form> 
+        </td>
         
     </tr> 
 @endforeach
 </table>
-<a href="/affectation/create" class="btn btn-primary">+ Nouveau Affectation</a> 
+<a href="/affectation/create" class="btn btn-primary">+ Nouvelle Affectation</a> 
 </div>

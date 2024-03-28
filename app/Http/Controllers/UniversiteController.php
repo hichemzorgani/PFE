@@ -46,6 +46,11 @@ class UniversiteController extends Controller
         $universite->fill($validatedData)->save();
         return to_route('universite.index');
     }
+    public function destroy(Universite $universite){
+        $universite->delete();
+        return to_route('universite.index');
+    }
+        
         
     
 }

@@ -1,7 +1,7 @@
 @include('partials.nav')
 <div class="container mt-2">
 <hr>
-    <h2>Tous les écoles</h2>
+    <h2>Toutes les écoles</h2>
 <hr>
 <table class="table">
     <tr>
@@ -17,9 +17,16 @@
                 @csrf
                <button class="btn btn-success">Modifier</button>
                 </form> 
+            </td>
+            <td>       
+            <form action ="{{route('ecole.destroy', $ecole->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+               <button class="btn btn-danger">Supprimer</button>
+                </form> 
         </td>
     </tr> 
 @endforeach
 </table>
-<a href="/ecole/create" class="btn btn-primary">+ Nouveau école</a> 
+<a href="/ecole/create" class="btn btn-primary">+ Nouvelle école</a> 
 </div>
