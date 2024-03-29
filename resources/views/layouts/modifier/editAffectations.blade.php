@@ -12,32 +12,33 @@
 <body>
 <div class="container mt-2">
     <hr>
-    <h2>Ajouter Affectation</h2>
+    <h2>Modifier département</h2>
     <hr>
-  <form action="{{ route('affectation.store') }}" method="POST">
+  <form action="{{ route('affectations.update',$affectation->id) }}" method="POST">
     @csrf 
+    @method('PUT')
     <div class="form-group">
         <label>Nom</label>
-        <input type="text" class="form-control" name="nom" autocomplete="off">
+        <input type="text" class="form-control" name="nom" autocomplete="off" value="{{$affectation->nom}}">
     </div>
     <div class="form-group">
         <label>Type</label>
-        <input type="password" class="form-control" name="type" autocomplete="off">
+        <input type="password" class="form-control" name="type" autocomplete="off" value="{{$affectation->type}}">
     </div>
     <div class="form-group">
         <label>Quota projet fin d'étude</label>
-        <input type="text" class="form-control" name="quota_pfe" autocomplete="off">
+        <input type="text" class="form-control" name="quota_pfe" autocomplete="off" value="{{$affectation->quota_pfe}}">
     </div>
     <div class="form-group">
         <label>Quota immersion</label>
-        <input type="text" class="form-control" name="quota_im" autocomplete="off">
+        <input type="text" class="form-control" name="quota_im" autocomplete="off" value="{{$affectation->quota_im}}">
     </div>
     <div class="form-group">
         <label>ID école</label>
-        <input type="text" class="form-control" name="structure_iap_id" autocomplete="off">
+        <input type="text" class="form-control" name="structure_iap_id" autocomplete="off" value="{{$affectation->structure_iap_id}}">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+        <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
     </div>
 </form>
 </div>

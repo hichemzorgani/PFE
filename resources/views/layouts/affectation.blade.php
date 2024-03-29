@@ -1,40 +1,67 @@
 @include('partials.nav')
+
+<style>
+    *{
+        font-family: Tahoma, sans-serif;
+    }
+</style>
+
 <div class="container mt-2">
     <hr>
-    <h2>Ajouter Affectation</h2>
+    <style>
+        #div{
+        margin: 5px; 
+        border: 2px solid black; 
+        border-radius: 10px; 
+        padding: 10px;
+    }
+    </style>
+    <h2>Ajouter une nouvelle direction :</h2>
     <hr>
+<div id="div">  
   <form action="{{ route('affectation.store') }}" method="POST">
     @csrf 
     <div class="form-group">
-        <label>Nom</label>
+        <h5>Nom :</h5>
         <input type="text" class="form-control" name="nom" autocomplete="off">
     </div>
     <div class="form-group">
-        <label>Type</label>
-        <input type="password" class="form-control" name="type" autocomplete="off">
+        <h5>Séléctionner le type :</h5>
+        <!--<input type="text" class="form-control" name="type" autocomplete="off">-->
+        <select class="form-control" name="type">
+            <option>direction</option>
+            <option>département</option>
+          </select>
+          <br>
     </div>
     <div class="form-group">
-        <label>Quota projet fin d'étude</label>
+        <h5>Quota projet fin d'étude :</h5>
         <input type="text" class="form-control" name="quota_pfe" autocomplete="off">
     </div>
     <div class="form-group">
-        <label>Quota immersion</label>
+        <h5>Quota immersion :</h5>
         <input type="text" class="form-control" name="quota_im" autocomplete="off">
     </div>
     <div class="form-group">
-        <label>ID école</label>
-        <input type="text" class="form-control" name="structure_iap_id" autocomplete="off">
+        <h5>Séléctionner ID école :</h5>
+        <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
+        <select class="form-control" name="structure_iap_id">
+            @foreach ($ecoles as $ecole)
+            <option>{{$ecole->id}}</option>
+            @endforeach
+          </select>
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+        <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">
     </div>
 </form>
 </div>
+</div>
 <div class="container mt-2">
 <hr>
-    <h2>Toutes les directions</h2>
+    <h2>Toutes les directions :</h2>
 <hr>
-<table class="table">
+<table class="table table-dark table-striped table-hover">
     <tr>
         <th>ID</th>
         <th>Nom</th>
@@ -42,8 +69,13 @@
         <th>quota_pfe</th>
         <th>quota_im</th>
         <th>école</th>
+        <th>Modification</th>
+        <th>Supression</th>
     </tr>    
+    
 @foreach ($affectations as $affectation)
+      @if($affectation->type == "direction")
+
     <tr>
         <td>{{$affectation->id}}</td>
         <td>{{$affectation->nom}}</td>
@@ -52,6 +84,7 @@
         <td>{{$affectation->quota_im}}</td>
         <td>{{$affectation->structure_iap_id}}</td>
         <td>
+    
             <form action ="{{route('affectation.edit', $affectation->id)}}" method="GET">
                 @csrf
                <button class="btn btn-success">Modifier</button>
@@ -66,6 +99,10 @@
         </td>
         
     </tr> 
+    @endif
 @endforeach
+      
 </table>
 </div>
+<br>
+<br>

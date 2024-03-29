@@ -34,7 +34,7 @@
         <input type="text" class="form-control" name="structure_iap_id" autocomplete="off" value="{{$compte->structure_iap_id}}">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="modifier" name="modifier">
+        <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
     </div>
 </form>
 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\compte;
+use App\Models\ecole;
 use Illuminate\Support\Facades\Hash;
 
 class CompteController extends Controller
@@ -11,7 +12,8 @@ class CompteController extends Controller
     public function index()
     {
         $comptes = compte::all();
-        return view('/layouts/compte',compact('comptes'));
+        $ecoles = ecole::all();
+        return view('/layouts/compte',compact('comptes'),compact('ecoles'));
     }
     
     public function create()

@@ -7,7 +7,7 @@
 </style>
 
 <div class="container mt-2">
-
+    <hr>
     <style>
         #div{
         margin: 5px; 
@@ -16,29 +16,31 @@
         padding: 10px;
     }
     </style>
-
+    <h2>Ajouter un nouveau département :</h2>
     <hr>
-    <h2>Créer un nouveau compte :</h2>
-    <hr>
-  <div id="div"> 
-  <form action="{{ route('compte.store') }}" method="POST">
+<div id="div">  
+  <form action="{{ route('affectations.store') }}" method="POST">
     @csrf 
     <div class="form-group">
-        <h5>Utilisateur :</h5>
-        <input type="text" class="form-control" name="utilisateur" autocomplete="off">
+        <h5>Nom :</h5>
+        <input type="text" class="form-control" name="nom" autocomplete="off">
     </div>
     <div class="form-group">
-        <h5>Password :</h5>
-        <input type="password" class="form-control" name="password" autocomplete="off">
+        <h5>Séléctionner le type :</h5>
+       <!-- <input type="text" class="form-control" name="type" autocomplete="off"> -->
+       <select class="form-control" name="type">
+        <option>département</option>
+        <option>direction</option>
+      </select>
+      <br>
     </div>
     <div class="form-group">
-        <h5>Séléctionner le type de compte :</h5>
-        <!--<input type="text" class="form-control" name="type_compte" autocomplete="off"> -->
-        <select class="form-control" name="type_compte">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
+        <h5>Quota projet fin d'étude :</h5>
+        <input type="text" class="form-control" name="quota_pfe" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <h5>Quota immersion :</h5>
+        <input type="text" class="form-control" name="quota_im" autocomplete="off">
     </div>
     <div class="form-group">
         <h5>Séléctionner ID école :</h5>
@@ -57,50 +59,46 @@
 </div>
 <div class="container mt-2">
 <hr>
-    <h2>Tous les comptes :</h2>
+    <h2>Tous les départements :</h2>
 <hr>
 <table class="table table-dark table-striped table-hover">
     <tr>
         <th>ID</th>
-        <th>Utilisateur</th>
-        <th>Mot de passe</th>
-        <th>Type compte</th>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>quota_pfe</th>
+        <th>quota_im</th>
         <th>école</th>
         <th>Modification</th>
         <th>Supression</th>
     </tr>    
-@foreach ($comptes as $compte)
+@foreach ($affectations as $affectation)
+    @if($affectation->type == "département")
     <tr>
-        <td>{{$compte->id}}</td>
-        <td>{{$compte->utilisateur}}</td>
-        <td>{{$compte->password}}</td>
-        <td>{{$compte->type_compte}}</td>
-        <td>{{$compte->structure_iap_id}}</td>
+        <td>{{$affectation->id}}</td>
+        <td>{{$affectation->nom}}</td>
+        <td>{{$affectation->type}}</td>
+        <td>{{$affectation->quota_pfe}}</td>
+        <td>{{$affectation->quota_im}}</td>
+        <td>{{$affectation->structure_iap_id}}</td>
         <td>
-            <form action ="{{route('compte.edit', $compte->id)}}" method="GET">
+            <form action ="{{route('affectations.edit', $affectation->id)}}" method="GET">
                 @csrf
                <button class="btn btn-success">Modifier</button>
                 </form> 
         </td>
         <td>
-            <form action ="{{route('compte.destroy', $compte->id)}}" method="POST">
+            <form action ="{{route('affectations.destroy', $affectation->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
                <button class="btn btn-danger">Supprimer</button>
                 </form> 
         </td>
+        
     </tr> 
+    @endif
 @endforeach
 </table>
 </div>
 <br>
 <br>
-
-
-
-
-
-
-
-
-

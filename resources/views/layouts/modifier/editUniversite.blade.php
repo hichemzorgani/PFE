@@ -26,7 +26,7 @@
         <input type="text" class="form-control" name="wilaya" autocomplete="off" value="{{$universite->wilaya}}">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="Modifier" name="modifier">
+        <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
     </div>    
 </form>
 </div>

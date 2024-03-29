@@ -22,7 +22,7 @@
         <input type="text" class="form-control" name="nom" autocomplete="off" value="{{ $ecole->nom }}">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+        <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
     </div>    
 </form>
 </div>

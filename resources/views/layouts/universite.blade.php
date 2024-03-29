@@ -1,32 +1,51 @@
 @include('partials.nav')
+
+<style>
+    *{
+        font-family: Tahoma, sans-serif;
+    }
+</style>
+
 <div class="container mt-2">
+    <style>
+        #div{
+        margin: 5px; 
+        border: 2px solid black; 
+        border-radius: 10px; 
+        padding: 10px;
+    }
+    </style>
     <hr>
-    <h2>Ajouter Université</h2>
+    <h2>Ajouter une nouvelle Université :</h2>
     <hr>
+  <div id="div"> 
   <form action="{{ route('universite.store') }}" method="POST">
     @csrf 
     <div class="form-group">
-        <label>Nom</label>
+        <h5>Nom :</h5>
         <input type="text" class="form-control" name="nom" autocomplete="off">
     </div>
     <div class="form-group">
-        <label>Wilaya</label>
+        <h5>Wilaya :</h5>
         <input type="text" class="form-control" name="wilaya" autocomplete="off">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+        <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">
     </div>    
 </form>
 </div>
+</div>
 <div class="container mt-2">
 <hr>
-    <h2>Toutes les Universités</h2>
+    <h2>Toutes les Universités :</h2>
 <hr>
-<table class="table">
+<table class="table table-dark table-striped table-hover">
     <tr>
         <th>ID</th>
         <th>Nom</th>
         <th>Wilaya</th>
+        <th>Modification</th>
+        <th>Supression</th>
     </tr>    
 @foreach ($universites as $universite)
     <tr>
@@ -50,3 +69,5 @@
 @endforeach
 </table>
 </div>
+<br>
+<br>

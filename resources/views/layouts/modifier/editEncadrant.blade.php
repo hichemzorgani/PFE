@@ -38,7 +38,7 @@
         <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off" value="{{$encadrant->structure_affectation_id}}">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-success my-2" value="modifier" name="modifier">
+        <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
     </div>
 </form>
 </div>

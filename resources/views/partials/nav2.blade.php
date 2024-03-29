@@ -15,7 +15,7 @@
 
         </li>
         <li class="nav-item nav-link">
-        <a href="{{ route ('stage.index') }}" class="nav-link active text-white">Gérer les stages</a>
+        <a href="{{ route ('stage.index') }}" class="nav-link active text-white">Gestion des stages</a>
             
         </li>
         <li class="nav-item nav-link">

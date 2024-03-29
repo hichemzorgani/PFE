@@ -1,7 +1,8 @@
 @include('partials.nav')
+
 <style>
     *{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: Tahoma, sans-serif;
     }
 </style>
 <div class="container mt-2">
@@ -13,12 +14,14 @@
         padding: 10px;
     }
     </style>
-    <h3>Ajouter une nouvelle école :)</h3> 
+    <hr>
+    <h2>Ajouter une nouvelle école :</h2> 
+    <hr>
     <div id="div">
         <form action="{{ route('ecole.store') }}" method="POST">
             @csrf 
             <div class="form-group">
-                <h5>Nom</h5>
+                <h5>Nom :</h5>
                 <input type="text" class="form-control" name="nom" autocomplete="off">
             </div>
             <div class="form-group">
@@ -27,8 +30,9 @@
         </form>
     </div>
     
-
-    <h3>Listes des écoles</h3>
+    <hr>
+    <h3>Listes des écoles :</h3>
+    <hr>
 
 <table class="table table-dark table-striped table-hover">
     <tr>
@@ -58,3 +62,5 @@
 @endforeach
 </table>
 </div>
+<br>
+<br>

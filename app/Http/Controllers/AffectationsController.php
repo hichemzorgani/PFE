@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\affectation;
 use App\Models\ecole;
 
-class AffectationController extends Controller
+class AffectationsController extends Controller
 {
     public function index()
     {
         $affectations = (affectation::all());
         $ecoles = (ecole::all());
-        return view('/layouts/affectation',compact('affectations'),compact('ecoles'));
+        return view('/layouts/affectations',compact('affectations'),compact('ecoles'));
         
     }
     public function create()
@@ -41,10 +41,10 @@ class AffectationController extends Controller
             'structure_iap_id' => $structure_iap_id,     
         ]);
         
-        return redirect()->route('affectation.index');
+        return redirect()->route('affectations.index');
     }
     public function edit (Affectation $affectation){
-        return view('Layouts/modifier/editaffectation', compact('affectation'));
+        return view('Layouts/modifier/editaffectations', compact('affectation'));
     }
     public function update (Request $request , Affectation $affectation){
         $validatedData = $request->validate([
@@ -55,11 +55,10 @@ class AffectationController extends Controller
             'structure_iap_id' => 'required',
         ]);
         $affectation->fill($validatedData)->save();
-        return to_route('affectation.index');
+        return to_route('affectations.index');
     }
     public function destroy(Affectation $affectation){
         $affectation->delete();
-        return to_route('affectation.index');
+        return to_route('affectations.index');
     }
-        
 }

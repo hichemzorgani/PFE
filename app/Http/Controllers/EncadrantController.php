@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\encadrant;
+use App\Models\affectation;
 
 class EncadrantController extends Controller
 {
     public function index()
     {
         $encadrants = (encadrant::all());
-        return view('/layouts/encadrant',compact('encadrants'));
+        $affectations = (affectation::all());
+        return view('/layouts/encadrant',compact('encadrants'),compact('affectations'));
         
     }
     public function create()
