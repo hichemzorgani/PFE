@@ -39,15 +39,17 @@
             <option>2</option>
             <option>3</option>
           </select>
+          <br>
     </div>
     <div class="form-group">
         <h5>Séléctionner ID école :</h5>
         <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
-        <select class="form-control" name="structure_iap_id">
+        <select class="form-control" name="nom_ecole">
             @foreach ($ecoles as $ecole)
-            <option>{{$ecole->id}}</option>
+            <option>{{$ecole->nom}}</option>
             @endforeach
           </select>
+          <br>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">

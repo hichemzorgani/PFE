@@ -43,11 +43,11 @@
         <input type="text" class="form-control" name="quota_im" autocomplete="off">
     </div>
     <div class="form-group">
-        <h5>Séléctionner ID école :</h5>
+        <h5>Séléctionner le nom d'école :</h5>
         <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
-        <select class="form-control" name="structure_iap_id">
+        <select class="form-control" name="nom_ecole">
             @foreach ($ecoles as $ecole)
-            <option>{{$ecole->id}}</option>
+            <option>{{$ecole->nom}}</option>
             @endforeach
           </select>
     </div>

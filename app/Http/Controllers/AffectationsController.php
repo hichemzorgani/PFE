@@ -21,11 +21,22 @@ class AffectationsController extends Controller
     }
     public function store(Request $request){
 
+        $ecoles = (ecole::all());
+
         $nom = $request->nom;
         $type = $request->type;
         $quota_pfe = $request->quota_pfe;
         $quota_im = $request->quota_im;
         $structure_iap_id = $request->structure_iap_id;
+        $nom_ecole = $request->nom_ecole;
+
+        foreach ($ecoles as $ecole)
+        {
+            if ($ecole->nom == $nom_ecole)
+            {
+                $structure_iap_id = $ecole->id;
+            }
+        }
 
         //validation
         $request->validate([

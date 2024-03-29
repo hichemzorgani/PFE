@@ -21,11 +21,21 @@ class EncadrantController extends Controller
     }
     public function store(Request $request){
 
+        $affectations = (affectation::all());
+
         $nom = $request->nom;
         $prenom = $request->prenom;
         $matricule = $request->matricule;
         $email = $request->email;
-        $structure_affectation_id = $request->structure_affectation_id;
+        $affectation_nom = $request->affectation_nom;
+
+        foreach ($affectations as $affectation)
+        {
+            if ($affectation->nom == $affectation_nom)
+            {
+                $structure_affectation_id = $affectation->id;
+            }
+        }
 
         //validation
         $request->validate([

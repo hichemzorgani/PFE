@@ -23,30 +23,45 @@ class CompteController extends Controller
 
     public function store(Request $request)
     {
+        $ecoles = (ecole::all());
+
         $utilisateur = $request->utilisateur;
         $password = $request->password;
         $type_compte = $request->type_compte;
-        $structure_iap_id = $request->structure_iap_id;
+        $nom_ecole = $request->nom_ecole;
+
+        foreach ($ecoles as $ecole)
+        {
+            if ($ecole->nom == $nom_ecole)
+            {
+                $structure_iap_id = $ecole->id;
+            }
+        }
         
         //validation
         $formFields = $request->validate([
             'utilisateur' => 'required',
             'password' => 'required',
             'type_compte' => 'required',
-            'structure_iap_id' => 'required',
+           // 'structure_iap_id' => 'required',
         ]);
 
         //Hash
         $password = $request->password;
-        $formFields['password'] = Hash::make($password);
+       // $formFields['password'] = Hash::make($password);
+        $passwordh = Hash::make($password);
         
 
         //insertion
-        compte::create($formFields);
-           // 'utilisateur' => $utilisateur,
-           // 'password' => $password,
-          //  'type_compte' => $type_compte,
-          //  'structure_iap_id' => $structure_iap_id,
+        compte::create([
+            'utilisateur' => $utilisateur,
+            'password' => $passwordh,
+            'type_compte' => $type_compte,
+            'structure_iap_id' => $structure_iap_id,
+        ]);
+
+        
+            
         
 
        return redirect()->route('compte.index');

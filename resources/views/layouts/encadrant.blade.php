@@ -40,9 +40,9 @@
     <div class="form-group">
         <h5>Séléctionner ID Département :</h5>
         <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off"> -->
-        <select class="form-control" name="structure_affectation_id">
+        <select class="form-control" name="affectation_nom">
             @foreach ($affectations as $affectation)
-            <option>{{$affectation->id}}</option>
+            <option>{{$affectation->nom}}</option>
             @endforeach
           </select>
     </div>
