@@ -38,7 +38,7 @@
         <input type="text" class="form-control" name="email" autocomplete="off">
     </div>
     <div class="form-group">
-        <h5>Séléctionner ID Département :</h5>
+        <h5>Séléctionner le nom de département ou direction :</h5>
         <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off"> -->
         <select class="form-control" name="affectation_nom">
             @foreach ($affectations as $affectation)
