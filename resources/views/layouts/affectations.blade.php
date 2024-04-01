@@ -73,7 +73,7 @@
         <th>Supression</th>
     </tr>    
 @foreach ($affectations as $affectation)
-    @if($affectation->type == "département")
+ @if($affectation->type == "département")
     <tr>
         <td>{{$affectation->id}}</td>
         <td>{{$affectation->nom}}</td>
