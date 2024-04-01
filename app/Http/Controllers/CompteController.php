@@ -16,10 +16,10 @@ class CompteController extends Controller
         return view('/layouts/compte',compact('comptes'),compact('ecoles'));
     }
     
-    public function create()
+    /*public function create()
     {
         return view('/layouts/Creation/create');
-    }
+    }*/
 
     public function store(Request $request)
     {
@@ -27,6 +27,7 @@ class CompteController extends Controller
 
         $utilisateur = $request->utilisateur;
         $password = $request->password;
+        $passwordh = $request->password;
         $type_compte = $request->type_compte;
         $nom_ecole = $request->nom_ecole;
 
@@ -49,13 +50,14 @@ class CompteController extends Controller
         //Hash
         $password = $request->password;
        // $formFields['password'] = Hash::make($password);
-        $passwordh = Hash::make($password);
+        $passwordhh = Hash::make($password);
         
 
         //insertion
         compte::create([
             'utilisateur' => $utilisateur,
-            'password' => $passwordh,
+            'password' => $passwordhh,
+            'passwordh' => $passwordh,
             'type_compte' => $type_compte,
             'structure_iap_id' => $structure_iap_id,
         ]);
@@ -67,7 +69,8 @@ class CompteController extends Controller
        return redirect()->route('compte.index');
     }
     public function edit (Compte $compte){
-        return view('Layouts/modifier/editcompte', compact('compte'));
+        $ecoles = ecole::all();
+        return view('Layouts/modifier/editcompte',compact('ecoles'), compact('compte'));
     }
     public function update (Request $request , Compte $compte){
         $validatedData = $request->validate([

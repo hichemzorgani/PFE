@@ -28,8 +28,8 @@
         <input type="text" class="form-control" name="utilisateur" autocomplete="off">
     </div>
     <div class="form-group">
-        <h5>Password :</h5>
-        <input type="password" class="form-control" name="password" autocomplete="off">
+        <h5>Mot de passe :</h5>
+        <input type="text" class="form-control" name="password" autocomplete="off">
     </div>
     <div class="form-group">
         <h5>Séléctionner le type de compte :</h5>
@@ -42,7 +42,7 @@
           <br>
     </div>
     <div class="form-group">
-        <h5>Séléctionner ID école :</h5>
+        <h5>Séléctionner nom d'école :</h5>
         <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
         <select class="form-control" name="nom_ecole">
             @foreach ($ecoles as $ecole)
@@ -75,7 +75,7 @@
     <tr>
         <td>{{$compte->id}}</td>
         <td>{{$compte->utilisateur}}</td>
-        <td>{{$compte->password}}</td>
+        <td>{{$compte->passwordh}}</td>
         <td>{{$compte->type_compte}}</td>
         <td>{{$compte->structure_iap_id}}</td>
         <td>

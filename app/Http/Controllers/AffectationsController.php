@@ -55,7 +55,9 @@ class AffectationsController extends Controller
         return redirect()->route('affectations.index');
     }
     public function edit (Affectation $affectation){
-        return view('Layouts/modifier/editaffectations', compact('affectation'));
+        $affectations = (affectation::all());
+        $ecoles = (ecole::all());
+        return view('Layouts/modifier/editaffectations',compact('ecoles'),compact('affectation'));
     }
     public function update (Request $request , Affectation $affectation){
         $validatedData = $request->validate([
@@ -64,6 +66,7 @@ class AffectationsController extends Controller
             'quota_pfe' => 'required',
             'quota_im' => 'required',
             'structure_iap_id' => 'required',
+            //'nom_ecole' => 'required',
         ]);
         $affectation->fill($validatedData)->save();
         return to_route('affectations.index');

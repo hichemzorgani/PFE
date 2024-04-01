@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" >
-    <title>La page de l'admin 2</title>
+    <title>Statistiques</title>
 </head>
 <body>
     <h1 class="sub-title">
@@ -92,7 +92,7 @@
                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
                        <circle class="path path-4" cx="100" cy="100" r="80"></circle>
                     </svg>
-                    <div class="percentage" style="color:#fff">85%</div>
+                    <div class="percentage" style="color:#fff">50%</div>
                     <div class="text">Département 04 :</div>
                 </div>
             </div>
@@ -325,28 +325,28 @@ section{
     stroke-linecap: round;
 }
 .path-1{animation: animate-path1 1s 1s linear forwards;}
-.path-2{animation: animate-path1 1s 1s linear forwards;}
-.path-3{animation: animate-path1 1s 1s linear forwards;}
-.path-4{animation: animate-path1 1s 1s linear forwards;}
+.path-2{animation: animate-path2 1s 1s linear forwards;}
+.path-3{animation: animate-path3 1s 1s linear forwards;}
+.path-4{animation: animate-path4 1s 1s linear forwards;}
 
 @keyframes animate-path1{
     100%{
         stroke-dashoffset: 50;
     }
 }
-@keyframes animate-path1{
+@keyframes animate-path2{
     100%{
         stroke-dashoffset: 175;
     }
 }
-@keyframes animate-path1{
+@keyframes animate-path3{
     100%{
         stroke-dashoffset: 125;
     }
 }
-@keyframes animate-path1{
+@keyframes animate-path4{
     100%{
-        stroke-dashoffset: 75;
+        stroke-dashoffset: 250;
     }
 }
 

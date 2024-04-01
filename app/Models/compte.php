@@ -12,6 +12,7 @@ class Compte extends Model
     protected $fillable = [
         'utilisateur',
         'password',
+        'passwordh',
         'type_compte',
         'structure_iap_id'
     ];
