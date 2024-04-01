@@ -43,6 +43,7 @@ class UniversiteController extends Controller
     public function update (Request $request , Universite $universite){
         $validatedData = $request->validate([
             'nom' => 'required',
+            'wilaya' => 'required',  
         ]);
         $universite->fill($validatedData)->save();
         return to_route('universite.index');
