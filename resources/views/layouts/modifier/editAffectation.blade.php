@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         <label>Type</label>
-        <input type="password" class="form-control" name="type" autocomplete="off" value="{{$affectation->type}}">
+        <input type="text" class="form-control" name="type" autocomplete="off" value="{{$affectation->type}}">
     </div>
     <div class="form-group">
         <label>Quota projet fin d'étude</label>
