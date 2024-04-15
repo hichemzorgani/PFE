@@ -19,7 +19,7 @@
         <div class="container1" id="skills">
             <h1 class="heading">Nombre quota disponible par département :</h1>
             <div class="Technical-bars">
-                <div class="bar"><i style="color: #c95d2e" class='bx bxl-html5'></i>
+                <div class="bar"><i class='bx bxl-html5'></i>
                     <div class="indfo">
                        <span class="dep">Département 01 :</span>
                     </div>
@@ -27,7 +27,7 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="bar"><i style="color: #147bbc" class='bx bxl-css3'></i>
+                <div class="bar"><i class='bx bxl-css3'></i>
                     <div class="indfo">
                        <span class="dep">Département 02 :</span>
                     </div>
@@ -35,7 +35,7 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="bar"><i style="color: #b0bc1e" class='bx bxl-javascript'></i>
+                <div class="bar"><i class='bx bxl-javascript'></i>
                     <div class="indfo">
                       <span class="dep">Département 03 :</span>
                     </div>
@@ -43,7 +43,7 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="bar"><i style="color: #c32ec9" class='bx bxl-python'></i>
+                <div class="bar"><i class='bx bxl-python'></i>
                     <div class="indfo">
                         <span class="dep">Département 04 :</span>
                     </div>

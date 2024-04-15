@@ -27,12 +27,11 @@
     </div>
     <div class="form-group">
         <h5>Séléctionner le type :</h5>
-        <!--<input type="text" class="form-control" name="type" autocomplete="off">-->
         <select class="form-control" name="type">
-            <option>direction</option>
-            <option>département</option>
+            <option value="direction">direction</option>
+            <option value="département">département</option>
           </select>
-          <br>
+    <br>      
     </div>
     <div class="form-group">
         <h5>Quota projet fin d'étude :</h5>
@@ -74,7 +73,7 @@
     </tr>    
     
 @foreach ($affectations as $affectation)
-      @if($affectation->type == "direction")
+      
 
     <tr>
         <td>{{$affectation->id}}</td>
@@ -99,7 +98,7 @@
         </td>
         
     </tr> 
-    @endif
+    
 @endforeach
       
 </table>

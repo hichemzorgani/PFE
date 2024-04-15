@@ -13,10 +13,7 @@
                 <a href="{{ route ('ecole.index') }}" class="nav-link active text-white">Gestion des écoles</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route ('affectation.index') }}" class="nav-link text-white">Gestion des directions </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route ('affectations.index') }}" class="nav-link text-white">Gestion des départements</a>
+                <a href="{{ route ('affectation.index') }}" class="nav-link text-white">Gestion des structures d'affectations </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route ('encadrant.index') }}" class="nav-link text-white">Gestion des encadrants</a>

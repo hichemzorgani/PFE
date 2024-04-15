@@ -68,7 +68,7 @@ class AffectationController extends Controller
             'structure_iap_id' => 'required',
             //'nom_ecole' => 'required',
         ]); 
-        /*$nom = $request->nom;
+       /* $nom = $request->nom;
         $type = $request->type;
         $quota_pfe = $request->quota_pfe;
         $quota_im = $request->quota_im;
