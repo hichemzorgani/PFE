@@ -29,13 +29,6 @@ Route::get('/compte/{compte}/edit',[CompteController::class,'edit'])->name('comp
 Route::put('/compte/{compte}',[CompteController::class,'update'])->name('compte.update');
 Route::delete('/compte/{compte}',[CompteController::class,'destroy'])->name('compte.destroy');
 
-Route::get('affectations',[AffectationsController::class,'index'])->name('affectations.index');
-
-Route::get('/affectations/create',[AffectationsController::class,'create'])->name('affectations.create');
-Route::post('/affectations/store',[AffectationsController::class,'store'])->name('affectations.store');
-Route::get('/affectations/{affectation}/edit',[AffectationsController::class,'edit'])->name('affectations.edit');
-Route::put('/affectations/{affectation}',[AffectationsController::class,'update'])->name('affectations.update');
-Route::delete('/affectations/{affectation}',[AffectationsController::class,'destroy'])->name('affectations.destroy');
 
 Route::get('affectation',[AffectationController::class,'index'])->name('affectation.index');
 
