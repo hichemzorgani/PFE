@@ -37,7 +37,7 @@ class UniversiteController extends Controller
     }
     public function edit (Universite $universite){
         $universites = (universite::all());
-        return view('Layouts/modifier/editUniversite',compact('universites'), compact('universite'));
+        return view('/layouts/universite',compact('universites'), compact('universite'));
 
     }
     public function update (Request $request , Universite $universite){

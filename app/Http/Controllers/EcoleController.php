@@ -35,7 +35,8 @@ class EcoleController extends Controller
         return redirect()->route('ecole.index')->with('success','Ecole ajoutée avec success.');
     }
     public function edit (Ecole $ecole){
-        return view('Layouts/modifier/editecole', compact('ecole'));
+        $ecoles = (ecole::all());
+        return view('/layouts/ecole',compact('ecoles','ecole'));
     }
     public function update (Request $request , Ecole $ecole){
         $validatedData = $request->validate([

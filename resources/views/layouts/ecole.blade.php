@@ -18,9 +18,26 @@
     }
     </style>
     <hr>
-    <h2>Ajouter une nouvelle école :</h2> 
+    <h2>@if(request()->has('modifier'))
+        Modifier Ecole :
+    @else                       
+        Ajouter une nouvelle ecole :
+    @endif</h2> 
     <hr>
     <div id="div">
+    @if(request()->has('modifier'))
+    <form action="{{ route('ecole.update',$ecole->id) }}" method="POST">
+        @csrf 
+        @method('PUT')
+        <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" name="nom" autocomplete="off" value="{{ $ecole->nom }}">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
+        </div>    
+    </form>
+    @else
         <form action="{{ route('ecole.store') }}" method="POST">
             @csrf 
             <div class="form-group">
@@ -31,6 +48,7 @@
                 <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">
             </div>    
         </form>
+    @endif
     </div>
     
     <hr>
@@ -51,7 +69,7 @@
         <td>
             <form action ="{{route('ecole.edit', $ecole->id)}}" method="GET">
                 @csrf
-               <button class="btn btn-success">Modifier</button>
+               <button class="btn btn-success" name="modifier">Modifier</button>
                 </form> 
             </td>
             <td>       

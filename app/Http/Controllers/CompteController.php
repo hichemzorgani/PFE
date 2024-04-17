@@ -70,7 +70,8 @@ class CompteController extends Controller
     }
     public function edit (Compte $compte){
         $ecoles = ecole::all();
-        return view('Layouts/modifier/editcompte',compact('ecoles'), compact('compte'));
+        $comptes = compte::all();
+        return view('/layouts/compte',compact('comptes', 'ecoles', 'compte'));
     }
     public function update (Request $request , Compte $compte){
         $validatedData = $request->validate([
