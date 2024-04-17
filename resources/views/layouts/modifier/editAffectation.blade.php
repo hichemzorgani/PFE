@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
      <h5>Séléctionner le Type :</h5>
-        <input type="text" class="form-control" name="type" autocomplete="off" value="{$affectation->type}}"> 
+        <!--<input type="text" class="form-control" name="type" autocomplete="off" value="{$affectation->type}}"> -->
         <select class="form-control" name="type">
             <option name="type">direction</option>
             <option name="type">département</option>
