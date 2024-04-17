@@ -22,6 +22,15 @@
   <form action="{{ route('encadrant.store') }}" method="POST">
     @csrf 
     <div class="form-group">
+        <h5>Séléctionner le nom de la structure d'affectation :</h5>
+        <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off"> -->
+        <select class="form-control" name="affectation_nom">
+            @foreach ($affectations as $affectation)
+            <option>{{$affectation->nom}}</option>
+            @endforeach
+          </select>
+    </div>
+    <div class="form-group">
         <h5>Nom :</h5>
         <input type="text" class="form-control" name="nom" autocomplete="off">
     </div>
@@ -36,15 +45,6 @@
     <div class="form-group">
         <h5>Email :</h5>
         <input type="text" class="form-control" name="email" autocomplete="off">
-    </div>
-    <div class="form-group">
-        <h5>Séléctionner le nom de département ou direction :</h5>
-        <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off"> -->
-        <select class="form-control" name="affectation_nom">
-            @foreach ($affectations as $affectation)
-            <option>{{$affectation->nom}}</option>
-            @endforeach
-          </select>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">

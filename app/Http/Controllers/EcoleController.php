@@ -32,7 +32,7 @@ class EcoleController extends Controller
             'nom' => $nom,  
         ]);
         
-        return redirect()->route('ecole.index');
+        return redirect()->route('ecole.index')->with('success','Ecole ajoutée avec success.');
     }
     public function edit (Ecole $ecole){
         return view('Layouts/modifier/editecole', compact('ecole'));
@@ -46,6 +46,6 @@ class EcoleController extends Controller
     }
     public function destroy(Ecole $ecole){
         $ecole->delete();
-        return to_route('ecole.index');
+        return to_route('ecole.index')->with('success','Ecole supprimée avec success.');
     }
 }

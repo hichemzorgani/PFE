@@ -1,4 +1,7 @@
 @include('partials.nav')
+<div class="container my-3" >
+    @include('partials.flashbag')
+</div>
 
 <style>
     *{

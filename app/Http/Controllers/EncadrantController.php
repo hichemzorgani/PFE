@@ -55,7 +55,8 @@ class EncadrantController extends Controller
     }
     public function edit (Encadrant $encadrant){
         $affectations = (affectation::all());
-        return view('Layouts/modifier/editEncadrant',compact('affectations'), compact('encadrant'));
+        $encadrants = (encadrant::all());
+        return view('layouts/encadrant',compact('encadrants','affectations','encadrant'));
     }
     public function update (Request $request , Encadrant $encadrant){
         $validatedData = $request->validate([

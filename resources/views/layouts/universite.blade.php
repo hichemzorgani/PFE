@@ -22,10 +22,6 @@
   <form action="{{ route('universite.store') }}" method="POST">
     @csrf 
     <div class="form-group">
-        <h5>Nom :</h5>
-        <input type="text" class="form-control" name="nom" autocomplete="off">
-    </div>
-    <div class="form-group">
         <h5>Wilaya :</h5>
         <!-- <input type="text" class="form-control" name="wilaya" autocomplete="off"> -->
         <select class="form-control" name="wilaya">
@@ -88,6 +84,10 @@
             <option value="El M'Ghair">57. El M'Ghair</option>
             <option value="El Meniaa">58. El Meniaa</option>
           </select>
+    </div>
+    <div class="form-group">
+        <h5>Nom :</h5>
+        <input type="text" class="form-control" name="nom" autocomplete="off">
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-warning my-2" value="Ajouter" name="ajouter">

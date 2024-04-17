@@ -24,6 +24,16 @@
   <form action="{{ route('compte.store') }}" method="POST">
     @csrf 
     <div class="form-group">
+        <h5>Séléctionner nom d'école :</h5>
+        <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
+        <select class="form-control" name="nom_ecole">
+            @foreach ($ecoles as $ecole)
+            <option>{{$ecole->nom}}</option>
+            @endforeach
+          </select>
+          <br>
+    </div>
+    <div class="form-group">
         <h5>Utilisateur :</h5>
         <input type="text" class="form-control" name="utilisateur" autocomplete="off">
     </div>
@@ -38,16 +48,6 @@
             <option>1</option>
             <option>2</option>
             <option>3</option>
-          </select>
-          <br>
-    </div>
-    <div class="form-group">
-        <h5>Séléctionner nom d'école :</h5>
-        <!--<input type="text" class="form-control" name="structure_iap_id" autocomplete="off"> -->
-        <select class="form-control" name="nom_ecole">
-            @foreach ($ecoles as $ecole)
-            <option>{{$ecole->nom}}</option>
-            @endforeach
           </select>
           <br>
     </div>

@@ -15,10 +15,6 @@ class AffectationController extends Controller
         return view('/layouts/affectation',compact('affectations'),compact('ecoles'));
         
     }
-    public function create()
-    {
-        return view('/layouts/Creation/createAffectation');
-    }
     public function store(Request $request){
 
         $ecoles = (ecole::all());
@@ -39,7 +35,8 @@ class AffectationController extends Controller
 
         //validation
         $request->validate([
-            'nom'=>'required'
+            'nom'=>'required',
+            'quota_pfe'=>'',
         ]);
 
         //insertion
@@ -56,7 +53,7 @@ class AffectationController extends Controller
     public function edit (Affectation $affectation){
         $ecoles = (ecole::all());
         $affectations = (affectation::all());
-        return view('Layouts/modifier/editaffectation',compact('ecoles'),compact('affectation'));
+        return view('/layouts/affectation',compact('affectations', 'ecoles', 'affectation'));
     }
     public function update (Request $request , Affectation $affectation){
         $ecoles = (ecole::all());
