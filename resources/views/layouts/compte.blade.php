@@ -30,6 +30,15 @@
         @csrf 
         @method('PUT')
         <div class="form-group">
+            <h5>ID école :</h5>
+            <!-- <input type="text" class="form-control" name="structure_iap_id" autocomplete="off" value="{$compte->structure_iap_id}}"> -->
+            <select class="form-control" name="structure_iap_id">
+                @foreach($ecoles as $ecole)
+                <option @if($compte->structure_iap_id == $ecole->id) selected @endif>{{$ecole->id}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <h5>Utilisateur :</h5>
             <input type="text" class="form-control" name="utilisateur" autocomplete="off" value="{{$compte->utilisateur}}">
         </div>
@@ -47,18 +56,15 @@
               </select>
         </div>
         <div class="form-group">
-            <h5>ID école :</h5>
-            <!-- <input type="text" class="form-control" name="structure_iap_id" autocomplete="off" value="{$compte->structure_iap_id}}"> -->
-            <select class="form-control" name="structure_iap_id">
-                @foreach($ecoles as $ecole)
-                <option @if($compte->structure_iap_id == $ecole->id) selected @endif>{{$ecole->id}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
             <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
+            <button type="button" class="btn btn-danger" onclick="goBack()">Annuler</button>
         </div>
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     @else
   <form action="{{ route('compte.store') }}" method="POST">
     @csrf 

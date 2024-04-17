@@ -28,10 +28,6 @@
         @csrf 
         @method('PUT')
         <div class="form-group">
-            <h5>Nom :</h5>
-            <input type="text" class="form-control" name="nom" autocomplete="off" value="{{$universite->nom}}">
-        </div>
-        <div class="form-group">
             <h5>Wilaya :</h5>
             <!-- <input type="text" class="form-control" name="wilaya" autocomplete="off" value="{$universite->wilaya}}"> -->
             <select class="form-control" name="wilaya">
@@ -96,10 +92,19 @@
               </select>
         </div>
         <div class="form-group">
+            <h5>Nom :</h5>
+            <input type="text" class="form-control" name="nom" autocomplete="off" value="{{$universite->nom}}">
+        </div>
+        <div class="form-group">
             <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
-            <input type="submit" class="btn btn-danger" value="Annuler" >
+            <button type="button" class="btn btn-danger" onclick="goBack()">Annuler</button>
         </div>    
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     @else
   <form action="{{ route('universite.store') }}" method="POST">
     @csrf 

@@ -35,8 +35,14 @@
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
+            <button type="button" class="btn btn-danger" onclick="goBack()">Annuler</button>
         </div>    
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     @else
         <form action="{{ route('ecole.store') }}" method="POST">
             @csrf 

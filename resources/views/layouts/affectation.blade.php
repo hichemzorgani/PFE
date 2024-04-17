@@ -43,8 +43,8 @@
             <h5>Séléctionner le Type :</h5>
                <!--<input type="text" class="form-control" name="type" autocomplete="off" value="{$affectation->type}}"> -->
                <select class="form-control" name="type">
-                   <option name="type">direction</option>
-                   <option name="type">département</option>
+                   <option name="type"@if($affectation->type == "direction") selected @endif>direction</option>
+                   <option name="type"@if($affectation->type == "département") selected @endif>département</option>
                </select>
         </div>
         <div class="form-group">
@@ -61,8 +61,14 @@
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
+            <button type="button" class="btn btn-danger" onclick="goBack()">Annuler</button>
         </div>
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     {{--<form action="{{ route('affectation.update',$affectation->id) }}" method="POST">
     @csrf 
     @method('PUT')

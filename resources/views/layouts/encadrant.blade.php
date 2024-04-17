@@ -28,6 +28,15 @@
         @csrf 
         @method('PUT')
         <div class="form-group">
+            <h5>Séléctionner ID Structure d'affectation :</h5>
+            <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off" value="{$encadrant->structure_affectation_id}}"> -->
+            <select class="form-control" name="structure_affectation_id">
+                @foreach($affectations as $affectation)
+                <option @if($affectation->id == $encadrant->structure_affectation_id) selected @endif>{{$affectation->id}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <h5>Nom :</h5>
             <input type="text" class="form-control" name="nom" autocomplete="off" value="{{$encadrant->nom}}">
         </div>
@@ -44,18 +53,15 @@
             <input type="text" class="form-control" name="email" autocomplete="off" value="{{$encadrant->email}}">
         </div>
         <div class="form-group">
-            <h5>ID Département :</h5>
-            <!-- <input type="text" class="form-control" name="structure_affectation_id" autocomplete="off" value="{$encadrant->structure_affectation_id}}"> -->
-            <select class="form-control" name="structure_affectation_id">
-                @foreach($affectations as $affectation)
-                <option @if($affectation->id == $encadrant->structure_affectation_id) selected @endif>{{$affectation->id}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
             <input type="submit" class="btn btn-success my-2" value="Enregistrer" name="modifier">
+            <button type="button" class="btn btn-danger" onclick="goBack()">Annuler</button>
         </div>
     </form>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     @else
   <form action="{{ route('encadrant.store') }}" method="POST">
     @csrf 
