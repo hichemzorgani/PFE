@@ -14,7 +14,8 @@ class StatistiqueController extends Controller
     $affectations = Affectation::all();
     $quota_dispos = [];
     $pourcentage_dispos = [];
-    $affectationStagesCount = []; // Associative array to track stage count for each affectation
+    $affectationStagesCount_pfe = []; // Associative array to track stage count for each affectation
+    $affectationStagesCount_imm = []; 
 
     foreach ($affectations as $affectation) 
     {
@@ -22,7 +23,7 @@ class StatistiqueController extends Controller
 
         foreach ($stages as $stage) 
         {
-            if ($affectation->id == $stage->structure_affectation_id) 
+            if ($stage->type_stage == "pfe" && $affectation->id == $stage->structure_affectation_id) 
             {
                 $stageCount++;
             }
@@ -31,13 +32,35 @@ class StatistiqueController extends Controller
         $quota_dispo = $affectation->quota_pfe - $stageCount; // Adjust quota based on stage count
         $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_pfe;
 
-        $quota_dispos[] = $quota_dispo;
-        $pourcentage_dispos[] = $pourcentage_dispo;
+        $quota_dispos_pfe[] = $quota_dispo;
+        $pourcentage_dispos_pfe[] = $pourcentage_dispo;
 
         // Keep track of stage count for each affectation
-        $affectationStagesCount[$affectation->id] = $stageCount;
+        $affectationStagesCount_pfe[$affectation->id] = $stageCount;
     }
 
-    return view('/layouts/statistique', compact('affectations', 'quota_dispos', 'pourcentage_dispos', 'stages', 'affectationStagesCount'));
+    foreach ($affectations as $affectation) 
+    {
+        $stageCount = 0; // Initialize stage count for each affectation
+
+        foreach ($stages as $stage) 
+        {
+            if ($stage->type_stage == "immersion" && $affectation->id == $stage->structure_affectation_id) 
+            {
+                $stageCount++;
+            }
+        }
+
+        $quota_dispo = $affectation->quota_im - $stageCount; // Adjust quota based on stage count
+        $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_im;
+
+        $quota_dispos_im[] = $quota_dispo;
+        $pourcentage_dispos_im[] = $pourcentage_dispo;
+
+        // Keep track of stage count for each affectation
+        $affectationStagesCount_im[$affectation->id] = $stageCount;
+    }
+
+    return view('/layouts/statistique', compact('affectations', 'quota_dispos_pfe','quota_dispos_im', 'pourcentage_dispos_pfe','pourcentage_dispos_im', 'stages', 'affectationStagesCount_pfe','affectationStagesCount_im'));
 }
 }

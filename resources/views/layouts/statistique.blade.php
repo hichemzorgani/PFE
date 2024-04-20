@@ -24,18 +24,18 @@
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos[$key] }} <br>  </span>
+            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos_pfe[$key] }} <br>  </span>
             <br>
         </div>
         <div class="progress-line html">
-            <span style="width: {{ $pourcentage_dispos[$key] }}%; position: absolute;"></span>
+            <span style="width: {{ $pourcentage_dispos_pfe[$key] }}%; position: absolute;"></span>
         </div>
     </div>
                 <br>
                 <style>
                     
                     .progress-line.html span::after{
-                     content: "{{ $quota_dispos[$key] }} ";
+                     content: "{{ $quota_dispos_pfe[$key] }} ";
                      position: relative;
                      margin-left: 200px;
                      padding-top: 18px;
@@ -52,27 +52,27 @@
             <h1 class="heading1">Quota immersion disponible par structure d'affectation :</h1>
             <br>
             <div class="Technical-bars">
-                @foreach ($affectations as $affectation)
-                <div class="bar"><i class='bx bxl-html5'></i>
-                    <div class="indfo">
-                       <span class="dep">{{$affectation->nom}} :<br> </span>
-                       <br>
-                       
-                    </div>
-                    <div class="progress-line css">
-                      <span></span>
-                    </div>
-                </div>
+                @foreach ($affectations as $key => $affectation)
+    <div class="bar">
+        <i class='bx bxl-html5'></i>
+        <div class="indfo">
+            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_im }} <br> Quota disponible: {{ $quota_dispos_im[$key] }} <br>  </span>
+            <br>
+        </div>
+        <div class="progress-line html">
+            <span style="width: {{ $pourcentage_dispos_im[$key] }}%; position: absolute;"></span>
+        </div>
+    </div>
                 <br>
                 <style>
-                    .progress-line.css span{
+                    /*.progress-line.css span{
                      width :65%;
                      position: relative;
-                    }
+                    }*/
                     .progress-line.css span::after{
-                     content: "18";
+                     content: "{{ $quota_dispos_im[$key] }}";
                      position: relative;
-                     margin-left: calc(65 * 4px);
+                     margin-left: 200px;
                      padding-top: 18px;
                      top: -28px;
                     }
