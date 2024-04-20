@@ -24,7 +24,7 @@
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos[$key] }} <br></span>
+            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos[$key] }} <br>  </span>
             <br>
         </div>
         <div class="progress-line html">
