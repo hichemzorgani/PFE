@@ -15,25 +15,29 @@ class StatistiqueController extends Controller
     $quota_dispos = [];
     $pourcentage_dispos = [];
     
-    foreach ($affectations as $affectation) {
+    foreach ($affectations as $affectation) 
+    {
         $quota_dispo = 0;
         $pourcentage_dispo = 0;
 
-        foreach ($stages as $stage) {
-            if ($affectation->id == $stage->structure_affectation_id) {
+        foreach ($stages as $stage) 
+        {
+            if ($affectation->id == $stage->structure_affectation_id) 
+            {
                 $quota_dispo = $affectation->quota_pfe - 1;
                 $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_pfe;
-                break; // Exit the inner loop once we find a match
+                break ; // Exit the inner loop once we find a match
             }
-            else{
+            else
+            {
                 $quota_dispo = $affectation->quota_pfe;
                 $pourcentage_dispo = 100;
             }
-            
         }
+        
 
-        $quota_dispos[$affectation->id] = $quota_dispo;
-        $pourcentage_dispos[$affectation->id] = $pourcentage_dispo;
+        $quota_dispos[] = $quota_dispo;
+        $pourcentage_dispos[] = $pourcentage_dispo;
     }
         return view('/layouts/statistique',compact('affectations','quota_dispos','pourcentage_dispos','stages'));
     }

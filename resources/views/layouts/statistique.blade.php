@@ -17,25 +17,25 @@
 
     <section>
         <div class="container1" id="skills">
-            <h1 class="heading">quota PFE disponible par structure d'affectation :</h1>
+            <h1 class="heading">Quota PFE disponible par structure d'affectation :</h1>
             <div class="Technical-bars">
                 
                 @foreach ($affectations as $key => $affectation)
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep">{{ $affectation->nom }} : {{ $quota_dispos[$affectation->id] }}<br></span>
+            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos[$key] }} <br></span>
             <br>
         </div>
         <div class="progress-line html">
-            <span style="width: {{ $pourcentage_dispos[$affectation->id] }}%; position: absolute;"></span>
+            <span style="width: {{ $pourcentage_dispos[$key] }}%; position: absolute;"></span>
         </div>
     </div>
                 <br>
                 <style>
                     
                     .progress-line.html span::after{
-                     content: "{{ $affectation->quota_pfe }} ";
+                     content: "{{ $quota_dispos[$key] }} ";
                      position: relative;
                      margin-left: 200px;
                      padding-top: 18px;
@@ -49,13 +49,13 @@
 
 
         <div class="container1">
-            <h1 class="heading1">quota immersion disponible par structure d'affectation :</h1>
+            <h1 class="heading1">Quota immersion disponible par structure d'affectation :</h1>
             <br>
             <div class="Technical-bars">
                 @foreach ($affectations as $affectation)
                 <div class="bar"><i class='bx bxl-html5'></i>
                     <div class="indfo">
-                       <span class="dep">{{$affectation->nom}} :<br></span>
+                       <span class="dep">{{$affectation->nom}} :<br> </span>
                        <br>
                        
                     </div>
