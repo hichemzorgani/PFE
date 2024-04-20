@@ -19,27 +19,31 @@
         <div class="container1" id="skills">
             <h1 class="heading">quota PFE disponible par structure d'affectation :</h1>
             <div class="Technical-bars">
-                @foreach ($affectations as $affectation)
-                <div class="bar"><i class='bx bxl-html5'></i>
-                    <div class="indfo">
-                       <span class="dep">{{$affectation->nom}} :<br></span>
-                       <br>
-                    </div>
-                    <div class="progress-line html">
-                      <span style="width :56%; position: absolute;"></span>
-                    </div>
-                </div>
+                
+                @foreach ($affectations as $key => $affectation)
+    <div class="bar">
+        <i class='bx bxl-html5'></i>
+        <div class="indfo">
+            <span class="dep">{{ $affectation->nom }} : {{ $quota_dispos[$affectation->id] }}<br></span>
+            <br>
+        </div>
+        <div class="progress-line html">
+            <span style="width: {{ $pourcentage_dispos[$affectation->id] }}%; position: absolute;"></span>
+        </div>
+    </div>
                 <br>
                 <style>
+                    
                     .progress-line.html span::after{
-                     content: "{{ $affectation->quota_pfe }}";
+                     content: "{{ $affectation->quota_pfe }} ";
                      position: relative;
-                     margin-left: calc(56 * 4px);
+                     margin-left: 200px;
                      padding-top: 18px;
                      top: -28px;
                     }
                 </style>
                 @endforeach
+                
             </div>
         </div>
 
