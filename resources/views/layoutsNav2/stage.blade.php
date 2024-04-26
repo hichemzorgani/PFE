@@ -1,4 +1,4 @@
-@include('partials.nav')
+@include('partials.nav2')
 <div class="container mt-2">
     <hr>
         <h2>Tous les Stages</h2>
@@ -21,13 +21,13 @@
         <td>{{$stage->id}}</td>
         <td>{{$stage->theme}}</td>
         <td>{{$stage->type_stage}}</td>
-        <td>{{$stage->date_debut}}</td>
-        <td>{{$stage->date_fin}}</td>
+        <td>{{$stage->start_date}}</td>
+        <td>{{$stage->end_date}}</td>
         <td>{{$stage->niveau}}</td>
-        <td>{{$stage->structure_affectation_id}}</td>
+        <td>{{$stage->structuresAffectation_id}}</td>
         <td>{{$stage->encadrant_id}}</td>
-        <td>{{$stage->université_id}}</td>
-        <td>{{$stage->spécialité_id}}</td>
+        <td>{{$stage->etablissement_id}}</td>
+        <td>{{$stage->speciality_id}}</td>
     
     </tr> 
 @endforeach  

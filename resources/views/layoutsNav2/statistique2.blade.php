@@ -27,30 +27,6 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="bar"><i style="color: #147bbc" class='bx bxl-css3'></i>
-                    <div class="indfo">
-                       <span class="dep">Département 02 :</span>
-                    </div>
-                    <div class="progress-line css">
-                      <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: #b0bc1e" class='bx bxl-javascript'></i>
-                    <div class="indfo">
-                      <span class="dep">Département 03 :</span>
-                    </div>
-                    <div class="progress-line javascript">
-                      <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: #c32ec9" class='bx bxl-python'></i>
-                    <div class="indfo">
-                        <span class="dep">Département 04 :</span>
-                    </div>
-                    <div class="progress-line python">
-                        <span></span>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -67,34 +43,16 @@
                     <div class="percentage" style="color:#fff">90%</div>
                     <div class="text">Département 01 :</div>
                 </div>
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                       <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                       <circle class="path path-2" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="text">Département 02 :</div>
-                    <div class="percentage" style="color:#fff">65%</div>
-                   
-                </div>
-                
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                       <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                       <circle class="path path-3" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage" style="color:#fff">75%</div>
-                    <div class="text">Département 03 :</div>
-                    
-                </div>
-            
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                       <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                       <circle class="path path-4" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage" style="color:#fff">85%</div>
-                    <div class="text">Département 04 :</div>
-                </div>
+                <style>
+                    .path-1{animation: animate-path1 1s 1s linear forwards;}
+
+                     @keyframes animate-path1{
+                      100%{
+                       stroke-dashoffset: 200;
+                       }
+                      }
+                </style>
+
             </div>
         </div>
     </section>
@@ -194,22 +152,7 @@ section{
     width :90%;
     position: relative;
 }
-.progress-line.css span{
-    width :60%;
-    position: relative;
-}
-.progress-line.javascript span{
-    width :85%;
-    position: relative;
-}
-.progress-line.python span{
-    width :50%;
-    position: relative;
-}
-.progress-line.react span{
-    width :75%;
-    position: relative;
-}
+
 .progess-line span::after{
     position: absolute;
     padding: 1px 8px;
@@ -225,38 +168,10 @@ section{
 }
 
 .progress-line.html span::after{
-    content: " 9";
+    content: "9";
   position: relative;
   margin-left: 360px;
   padding-top: 18px;
-  top: -28px;
-}
-.progress-line.css span::after{
-    content :"6";
-    position: relative;
-    margin-left: 240px;
-  padding-top: 29px;
-  top: -28px;
-}
-.progress-line.javascript span::after{
-    content :"8";
-    position: relative;
-    margin-left: 340px;
-  padding-top: 29px;
-  top: -28px;
-}
-.progress-line.python span::after{
-    content :"5";
-    position: relative;
-    margin-left: 195px;
-  padding-top: 29px;
-  top: -28px;
-}
-.progress-line.react span::after{
-    content :"75%";
-    position: relative;
-    margin-left: 300px;
-  padding-top: 29px;
   top: -28px;
 }
 .progress-line span::before{
@@ -324,31 +239,8 @@ section{
     stroke-dashoffset: 502;
     stroke-linecap: round;
 }
-.path-1{animation: animate-path1 1s 1s linear forwards;}
-.path-2{animation: animate-path1 1s 1s linear forwards;}
-.path-3{animation: animate-path1 1s 1s linear forwards;}
-.path-4{animation: animate-path1 1s 1s linear forwards;}
 
-@keyframes animate-path1{
-    100%{
-        stroke-dashoffset: 50;
-    }
-}
-@keyframes animate-path1{
-    100%{
-        stroke-dashoffset: 175;
-    }
-}
-@keyframes animate-path1{
-    100%{
-        stroke-dashoffset: 125;
-    }
-}
-@keyframes animate-path1{
-    100%{
-        stroke-dashoffset: 75;
-    }
-}
+
 
 .radial-bar .percentage{
     position: absolute;

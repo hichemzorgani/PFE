@@ -25,9 +25,6 @@
                 <a href="{{ route ('compte.index') }}" class="nav-link text-white">Gestion des comptes</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route ('stage.index') }}" class="nav-link text-white">Gestion des stages</a>
-            </li>
-            <li class="nav-item">
                 <a href="{{ route ('statistique.index') }}" class="nav-link text-white">Consulter les Statistiques</a>
             </li>
             <li id="li" class="nav-item dropdown">

@@ -18,6 +18,6 @@ class Stage extends Model
         'structure_affectation_id',
         'encadrant_id',
         'université_id',
-        'spécialité_id'
+        'spécialité_id',
     ];
 }

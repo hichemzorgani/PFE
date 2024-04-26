@@ -12,35 +12,36 @@
 </head>
 <body>
     <h1 class="sub-title">
-         Statist<span>iques </span>
+         Statistiques <span>Quota</span>
     </h1>
 
     <section>
         <div class="container1" id="skills">
-            <h1 class="heading">Quota PFE disponible par structure d'affectation :</h1>
+            <h1 class="heading">Quota <span style="color: rgb(255, 123, 0);">Projet fin d'étude</span> disponible par structure d'affectation :</h1>
             <div class="Technical-bars">
                 
                 @foreach ($affectations as $key => $affectation)
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos_pfe[$key] }} <br>  </span>
+            <span class="dep"><span style="color:rgb(6, 186, 3);"> {{ $affectation->nom }} :</span><br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos_pfe[$key] }} <br>  </span>
             <br>
         </div>
         <div class="progress-line html">
             <span style="width: {{ $pourcentage_dispos_pfe[$key] }}%; position: absolute;"></span>
+            <p style="position:absolute;margin-left:{{ $pourcentage_dispos_pfe[$key] * 4 }}px;margin-top:-33px;" >{{ $pourcentage_dispos_pfe[$key] }}%</p>
         </div>
     </div>
                 <br>
                 <style>
-                    
-                    .progress-line.html span::after{
+                   
+                     /*.progress-line.html p::after{
                      content: "{{ $quota_dispos_pfe[$key] }} ";
                      position: relative;
                      margin-left: 200px;
                      padding-top: 18px;
                      top: -28px;
-                    }
+                    } */
                 </style>
                 @endforeach
                 
@@ -49,18 +50,19 @@
 
 
         <div class="container1">
-            <h1 class="heading1">Quota immersion disponible par structure d'affectation :</h1>
+            <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>
             <br>
             <div class="Technical-bars">
                 @foreach ($affectations as $key => $affectation)
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep">{{ $affectation->nom }} :<br> Quota: {{ $affectation->quota_im }} <br> Quota disponible: {{ $quota_dispos_im[$key] }} <br>  </span>
+            <span class="dep"><span style="color:rgb(6, 186, 3);"> {{ $affectation->nom }} :</span><br> Quota: {{ $affectation->quota_im }} <br> Quota disponible: {{ $quota_dispos_im[$key] }} <br>  </span>
             <br>
         </div>
         <div class="progress-line html">
             <span style="width: {{ $pourcentage_dispos_im[$key] }}%; position: absolute;"></span>
+            <p style="position:absolute;margin-left:{{ $pourcentage_dispos_im[$key] * 4 }}px;margin-top:-33px;" >{{ $pourcentage_dispos_im[$key] }}%</p>
         </div>
     </div>
                 <br>
@@ -68,14 +70,14 @@
                     /*.progress-line.css span{
                      width :65%;
                      position: relative;
-                    }*/
+                    }
                     .progress-line.css span::after{
                      content: "{{ $quota_dispos_im[$key] }}";
                      position: relative;
                      margin-left: 200px;
                      padding-top: 18px;
                      top: -28px;
-                    }
+                    }*/
                 </style>
                 @endforeach
             </div>
@@ -93,18 +95,18 @@
 }
 body
 {
-    color:#fff;
-    background: #081b29;
+    color:#cbc7c7;
+    background: #03131f;
 
 }
 .sub-title{
   text-align: center;
   font-size: 60px;
-  padding-bottom: 20px;
-  padding-top: 0px;
+  padding-bottom: 60px;
+  padding-top: 35px;
 }
 .sub-title span{
-    color: #0ef;
+    color: rgb(255, 123, 0);
 }
 section{
     display: flex;
@@ -117,7 +119,7 @@ section{
     margin-left: 100px;
 }
 .heading{
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 .bar{
     font-size :23px;
@@ -152,7 +154,7 @@ section{
     border-radius: 10px;
     width: 100%;
     height: 10px;
-    background-color: #000;
+    background-color: #ffffff;
     animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
     transform: scaleX(0);
     transform-origin: left;
@@ -166,7 +168,7 @@ section{
 
 .Technical-bars .bar .progress-line span{
     height: 100%;
-    background-color: #0ef;
+    background-color: rgb(255, 123, 0);
     position: absolute;
     border-radius: 10px;
     animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
@@ -215,7 +217,7 @@ section{
 }
 
 .heading1{
-    margin-bottom: 25px;
+    margin-bottom: 65px;
 }
 .text{
     margin-left:10%;

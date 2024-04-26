@@ -23,7 +23,7 @@ class StatistiqueController extends Controller
 
         foreach ($stages as $stage) 
         {
-            if ($stage->type_stage == "pfe" && $affectation->id == $stage->structure_affectation_id) 
+            if ($stage->type_stage == "pfe" && $affectation->id == $stage->structuresAffectation_id) 
             {
                 $stageCount++;
             }
@@ -45,13 +45,17 @@ class StatistiqueController extends Controller
 
         foreach ($stages as $stage) 
         {
-            if ($stage->type_stage == "immersion" && $affectation->id == $stage->structure_affectation_id) 
+            if ($stage->type_stage == "immersion" && $affectation->id == $stage->structuresAffectation_id) 
             {
                 $stageCount++;
             }
         }
 
-        $quota_dispo = $affectation->quota_im - $stageCount; // Adjust quota based on stage count
+        $quota_dispo = $affectation->quota_im - $stageCount;// Adjust quota based on stage count
+        if ($quota_dispo < 0)
+        {
+            $quota_dispo =0;
+        }
         $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_im;
 
         $quota_dispos_im[] = $quota_dispo;
