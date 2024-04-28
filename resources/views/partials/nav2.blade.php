@@ -14,6 +14,12 @@
         <a href="{{ route ('statistique2.index') }}" class="nav-link text-white">Consulter les Statistiques</a>
 
         </li>
+
+        <li class="nav-item nav-link">
+            <a href="{{ route ('search.index') }}" class="nav-link text-white">La recherche</a>
+    
+        </li>
+
         <li class="nav-item nav-link">
         <a href="{{ route ('stage.index') }}" class="nav-link active text-white">Gestion des stages</a>
             

@@ -13,6 +13,7 @@ use App\Http\Controllers\StageController;
 use App\Http\Controllers\ConsulterStageController;
 use App\Http\Controllers\StatistiquesController;
 use App\Http\Controllers\StatistiqueController;
+use App\Http\Controllers\searchController;
 
 
 
@@ -75,6 +76,10 @@ Route::get('/statistique', [StatistiqueController::class,'index'])->name('statis
 Route::get('/stage',[StageController::class,'index'])->name('stage.index');
 
 Route::get('/statistique2',[StatistiquesController::class,'index'])->name('statistique2.index');
+
+Route::get('/search',[searchController::class,'index'])->name('search.index');
+Route::post('/search/research',[searchController::class,'show'])->name('search.show');
+
 
 
 

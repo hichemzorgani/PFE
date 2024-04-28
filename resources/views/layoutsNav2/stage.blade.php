@@ -25,7 +25,7 @@
         <td>{{$stage->end_date}}</td>
         <td>{{$stage->niveau}}</td>
         <td>{{$stage->structuresAffectation_id}}</td>
-        <td>{{$stage->encadrant_id}}</td>
+        <td>{{$stage->encadrant->nom}}</td>
         <td>{{$stage->etablissement_id}}</td>
         <td>{{$stage->speciality_id}}</td>
     

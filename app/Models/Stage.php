@@ -17,7 +17,20 @@ class Stage extends Model
         'niveau',
         'structure_affectation_id',
         'encadrant_id',
-        'université_id',
+        'etablissement_id',
         'spécialité_id',
     ];
+
+    public function encadrant()
+    {
+        return $this->belongsTo(encadrant::class, 'encadrant_id');
+    }
+    public function affectation()
+    {
+        return $this->belongsTo(affectation::class, 'structuresAffectation_id');
+    }
+    public function etablissement()
+    {
+        return $this->belongsTo(universite::class, 'etablissement_id');
+    }
 }

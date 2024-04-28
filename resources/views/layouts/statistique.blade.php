@@ -50,7 +50,9 @@
 
 
         <div class="container1">
+            <div class="id">
             <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>
+            </div>
             <br>
             <div class="Technical-bars">
                 @foreach ($affectations as $key => $affectation)
@@ -92,6 +94,25 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'poppins',sans-serif;
+}
+.container1 {
+    border: 3px solid #fff; /* White border with 2px width */
+    border-radius: 10px;
+    padding: 20px; /* Add padding to create space between content and border */
+    margin-bottom: 20px; /* Add margin between containers */
+    
+    
+   
+}
+
+/* Add borders to the sub-title h1 */
+.sub-title {
+    border: 3px solid #fff; /* White border with 3px width */
+    padding: 10px; /* Add padding to create space between text and border */
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add margin between sub-title and container */
+    
+
 }
 body
 {

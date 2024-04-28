@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-light bg-dark">
+    <nav class="navbar navbar-expand navbar-light bg-dark ">
         <div class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="{{ route ('ecole.index') }}" class="nav-link active text-white">Gestion des écoles</a>
