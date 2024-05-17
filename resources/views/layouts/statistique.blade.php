@@ -17,6 +17,7 @@
 
     <section>
         <div class="container1" id="skills">
+            <div class="container99">
             <h1 class="heading">Quota <span style="color: rgb(255, 123, 0);">Projet fin d'étude</span> disponible par structure d'affectation :</h1>
             <div class="Technical-bars">
                 
@@ -46,13 +47,13 @@
                 @endforeach
                 
             </div>
+            </div>
         </div>
 
 
         <div class="container1">
-            <div class="id">
-            <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>
-            </div>
+            <div class="container99">
+            <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>  
             <br>
             <div class="Technical-bars">
                 @foreach ($affectations as $key => $affectation)
@@ -83,6 +84,7 @@
                 </style>
                 @endforeach
             </div>
+            </div>
         </div>
     </section>
 
@@ -95,22 +97,24 @@
     scroll-behavior: smooth;
     font-family: 'poppins',sans-serif;
 }
-.container1 {
-    border: 3px solid #fff; /* White border with 2px width */
+/*.container99 {
+    border: 3px solid #fff; 
     border-radius: 10px;
-    padding: 20px; /* Add padding to create space between content and border */
-    margin-bottom: 20px; /* Add margin between containers */
+    padding: 20px; 
+    margin-bottom: 20px; 
+    width :470px;
+    
     
     
    
-}
+}*/
 
-/* Add borders to the sub-title h1 */
+
 .sub-title {
-    border: 3px solid #fff; /* White border with 3px width */
-    padding: 10px; /* Add padding to create space between text and border */
+    border: 3px solid #fff; 
+    padding: 10px; 
     border-radius: 10px;
-    margin-bottom: 20px; /* Add margin between sub-title and container */
+    margin-bottom: 20px; 
     
 
 }

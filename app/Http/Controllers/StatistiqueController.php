@@ -30,7 +30,16 @@ class StatistiqueController extends Controller
         }
 
         $quota_dispo = $affectation->quota_pfe - $stageCount; // Adjust quota based on stage count
-        $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_pfe;
+        $pourcentage_dispo = number_format(($quota_dispo * 100) / $affectation->quota_pfe, 1);
+
+        if($pourcentage_dispo == 0)
+        {
+            $pourcentage_dispo =0;
+        }
+        if($pourcentage_dispo == 100)
+        {
+            $pourcentage_dispo =100;
+        }
 
         $quota_dispos_pfe[] = $quota_dispo;
         $pourcentage_dispos_pfe[] = $pourcentage_dispo;
@@ -56,8 +65,17 @@ class StatistiqueController extends Controller
         {
             $quota_dispo =0;
         }
-        $pourcentage_dispo = ($quota_dispo * 100) / $affectation->quota_im;
+        $pourcentage_dispo = number_format(($quota_dispo * 100) / $affectation->quota_im, 1);
 
+        if($pourcentage_dispo == 0)
+        {
+            $pourcentage_dispo =0;
+        }
+        if($pourcentage_dispo == 100)
+        {
+            $pourcentage_dispo =100;
+        }
+        
         $quota_dispos_im[] = $quota_dispo;
         $pourcentage_dispos_im[] = $pourcentage_dispo;
 

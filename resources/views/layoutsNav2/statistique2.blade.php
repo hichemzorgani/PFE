@@ -24,7 +24,7 @@
     <div class="bar">
         <i class='bx bxl-html5'></i>
         <div class="indfo">
-            <span class="dep"><span style="color:rgb(226, 232, 226);"> Nombre stages PFE : {{$count_pfe}}</span><br>  </span>
+            <span class="dep"><span style="text-align: center;"> Nombre stages PFE : {{$count_pfe}}</span><br>  </span>
             <br>
         </div>
         <div class="progress-line html">

@@ -11,9 +11,15 @@
 <nav class="navbar navbar-expand navbar-light bg-dark">
     <div class="nav navbar-nav mr-auto">
         <li class="nav-item nav-link">
-        <a href="{{ route ('statistique2.index') }}" class="nav-link text-white">Consulter les Statistiques</a>
+            <li class="nav-item nav-link">
+                <a href="{{ route ('test.index') }}" class="nav-link text-white">Statistiques Stages</a>
+        
+            </li>
 
-        </li>
+            <li class="nav-item nav-link">
+                <a href="{{ route ('graphe.index') }}" class="nav-link text-white">Graphe de stages</a>
+        
+            </li>
 
         <li class="nav-item nav-link">
             <a href="{{ route ('search.index') }}" class="nav-link text-white">La recherche</a>
@@ -24,10 +30,7 @@
         <a href="{{ route ('stage.index') }}" class="nav-link active text-white">Gestion des stages</a>
             
         </li>
-        <li class="nav-item nav-link">
-        <a href="" class="nav-link text-white">Ajouter stagiaire</a>
-
-        </li>
+        
         <li class="nav-item nav-link">
         <a href="{{ route ('consulterstage.index') }}" class="nav-link text-white">Connecter en tant que (USER) </a>
 

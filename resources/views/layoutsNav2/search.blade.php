@@ -62,6 +62,9 @@
                             <option value="">Choose level (Optional)</option>
                                 <option value="Licence">Licence</option>
                                 <option value="Master">Master</option>
+                                <option value="doctorat">Doctorat</option>
+                                <option value="ingénieur">Ingénieur</option>
+                                <option value="TS">Technicien supérieur</option>
                         </select>
                         </div>
                         
@@ -166,7 +169,7 @@
                 <h2>Résultats de la recherche : <span style="color:green">{{$count}} Stages </span></h2>
             <hr>
             <table class="table table-bordered table-striped">
-                <thead class="table" style="background-color: rgb(11, 149, 11)">
+                <thead class="table" style="background-color: rgb(219, 169, 5)">
                 
                 <tr>
                     
@@ -178,6 +181,8 @@
                     <th>Structure d'affectation </th>
                     <th>Encadrant</th>
                     <th>Etablissement</th>
+                    <th>Spécialité</th>
+                    
                    
                     
                 </tr>  
@@ -194,6 +199,8 @@
                 <td>{{$stage->affectation->nom}}</td>
                 <td>{{$stage->encadrant->nom}}</td>
                 <td>{{$stage->etablissement->nom}}</td>
+                <td>{{$stage->speciality}}</td>
+                
                 
                 
             </tr> 
