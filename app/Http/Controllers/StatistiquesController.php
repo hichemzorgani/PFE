@@ -45,4 +45,6 @@ class StatistiquesController extends Controller
 
         return view('/layoutsNav2/statistique2',compact('stages','pourcentage_pfe','pourcentage_im','count_pfe','count_im'));
     }
+
+    
 }
