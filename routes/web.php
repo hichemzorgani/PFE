@@ -72,6 +72,9 @@ Route::get('/login', [LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 
 Route::get('/statistique', [StatistiqueController::class,'index'])->name('statistique.index');
+Route::post('/statistique/search', [StatistiqueController::class, 'search'])->name('statistique.search');
+
+
 
 
 // -----------------nav2 (admin)----------------------------------------------------------------------------------------------------------

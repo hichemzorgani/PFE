@@ -25,8 +25,9 @@
             
             <form action ="{{route('Stage.cloture', $stage->id)}}" method="GET">
                 @csrf
-                
+                @if ($stage->cloture == 0) 
                <button class="btn btn-success" name="cloturer" type="submit">Cloture</button>
+               @endif
                 </form>   
         </td>
         @foreach ($stagiaires->where('stage_id', $stage->id) as $stagiaire)

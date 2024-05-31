@@ -13,9 +13,31 @@
 <body>
     <h1 class="sub-title">
          Statistiques <span>Quota</span>
-    </h1>
+         <br>
+         <form action="{{ route('statistique.search') }}" method="POST">
+            @csrf
+         <div class="container">
+            <div class="center-select">
+            <select class="form-control" name="structuresAffectation_id" >
+                @php
+                    $counter = 1;
+                @endphp
+                @foreach($affectations as $affectation)
+                    <option value="{{ $affectation->id }}">{{ $counter++ }}. {{ $affectation->nom }}</option>
+                @endforeach
+            </select>
+            </div>
+            <input  type="submit" class="btn btn-success" value="Rechercher" name="Rechercher">
+         </div>
+         </form>
+        </h1>
 
+ @if ($operation == 0)     
+
+    
+<div class="row">
     <section>
+        <div class="col">
         <div class="container1" id="skills">
             <div class="container99">
             <h1 class="heading">Quota <span style="color: rgb(255, 123, 0);">Projet fin d'étude</span> disponible par structure d'affectation :</h1>
@@ -49,8 +71,9 @@
             </div>
             </div>
         </div>
+        </div>
 
-
+        <div class="col">
         <div class="container1">
             <div class="container99">
             <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>  
@@ -86,9 +109,118 @@
             </div>
             </div>
         </div>
+        </div>
+
     </section>
+</div>
+@endif
+
+@if ($operation == 1) 
+
+<div class="row">
+    <section>
+        <div class="col">
+        <div class="container1" id="skills">
+            <div class="container99">
+            <h1 class="heading">Quota <span style="color: rgb(255, 123, 0);">Projet fin d'étude</span> disponible par structure d'affectation :</h1>
+            <div class="Technical-bars">
+                
+                @foreach ($affectations as $key => $affectation)
+                      @if($affectation->id == $affectationID)
+    <div class="bar">
+        <i class='bx bxl-html5'></i>
+        <div class="indfo">
+            <span class="dep"><span style="color:rgb(6, 186, 3);"> {{ $affectation->nom }} :</span><br> Quota: {{ $affectation->quota_pfe }} <br> Quota disponible: {{ $quota_dispos_pfeR }} <br>  </span>
+            <br>
+        </div>
+        <div class="progress-line html">
+            <span style="width: {{ $pourcentage_dispos_pfeR }}%; position: absolute;"></span>
+            <p style="position:absolute;margin-left:{{ $pourcentage_dispos_pfeR * 4 }}px;margin-top:-33px;" >{{ $pourcentage_dispos_pfeR }}%</p>
+        </div>
+    </div>
+                <br>
+                <style>
+                   
+                     /*.progress-line.html p::after{
+                     content: "{{ $quota_dispos_pfeR }} ";
+                     position: relative;
+                     margin-left: 200px;
+                     padding-top: 18px;
+                     top: -28px;
+                    } */
+                </style>
+                @endif
+                @endforeach
+                
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="col">
+        <div class="container1">
+            <div class="container99">
+            <h1 class="heading1">Quota <span style="color:rgb(255, 123, 0);"> Immersion </span>disponible par structure d'affectation :</h1>  
+            <br>
+            <div class="Technical-bars">
+                @foreach ($affectations as $key => $affectation)
+                    @if($affectation->id == $affectationID)
+    <div class="bar">
+        <i class='bx bxl-html5'></i>
+        <div class="indfo">
+            <span class="dep"><span style="color:rgb(6, 186, 3);"> {{ $affectation->nom }} :</span><br> Quota: {{ $affectation->quota_im }} <br> Quota disponible: {{ $quota_dispos_imR }} <br>  </span>
+            <br>
+        </div>
+        <div class="progress-line html">
+            <span style="width: {{ $pourcentage_dispos_imR }}%; position: absolute;"></span>
+            <p style="position:absolute;margin-left:{{ $pourcentage_dispos_imR * 4 }}px;margin-top:-33px;" >{{ $pourcentage_dispos_imR }}%</p>
+        </div>
+    </div>
+                <br>
+                <style>
+                    /*.progress-line.css span{
+                     width :65%;
+                     position: relative;
+                    }
+                    .progress-line.css span::after{
+                     content: "{{ $quota_dispos_imR }}";
+                     position: relative;
+                     margin-left: 200px;
+                     padding-top: 18px;
+                     top: -28px;
+                    }*/
+                </style>
+                @endif
+                @endforeach
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+</div>
+
+@endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <style>
+        .center-select {
+    display: flex;
+    justify-content: center;
+}
  *{
     font-family: Tahoma, sans-serif;
     margin: 0;
@@ -109,7 +241,12 @@
    
 }*/
 
-
+.container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+              
+                    
+}
 .sub-title {
     border: 3px solid #fff; 
     padding: 10px; 
