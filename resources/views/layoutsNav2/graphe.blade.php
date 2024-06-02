@@ -11,16 +11,11 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- My CSS -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet">
 
-	<title>AdminHub</title>
+	<title>Dashboard</title>
 </head>
 <body>
-
-
-	
-
-
 
 	<!-- CONTENT -->
 	<section id="content">
@@ -52,7 +47,7 @@
 					<i class='bx bxs-check-circle'></i>
 					<span class="text">
 						<h3>{{$C1}}</h3>
-						<p>Stages Cloturés</p>
+						<p>Stages cloturés</p>
 					</span>
 				</li>
 				<li>
@@ -71,21 +66,22 @@
 				</li>
 			</ul>
 
-
+			
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Dernier activités</h3>
+						<h3>Dernières activités </h3>
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
+					<div class="scrollable-table">
 					<table>
 						<thead>
 							<tr>
 								<th>Nom</th>
 								<th>Type</th>
                        			<th>Date</th>
-								<th>Status</th>
+								<th>Action</th>
                 
 							</tr>
 						</thead>
@@ -97,10 +93,7 @@
             @if (- now()->diffInDays($affectation->created_at)  < 1)
 						<tbody>
 							<tr>
-								<td>
-									
-									<p>{{$affectation->nom}}</p>
-								</td>
+								<td>{{$affectation->nom}}</td>
 								<td>structure d'affectation</td>
                                 <td>{{$affectation->created_at}}</td>
 								<td><span class="status completed">Ajouté</span></td>
@@ -108,10 +101,7 @@
               @endif
             @if (- now()->diffInDays($affectation->updated_at)  < 1 && $affectation->created_at != $affectation->updated_at)
 							<tr>
-								<td>
-									
-									<p>{{$affectation->nom}}</p>
-								</td>
+								<td>{{$affectation->nom}}</td>
 								<td>Structure d'affectation</td>
                                 <td>{{$affectation->updated_at}}</td>
 								<td><span class="status process">Modifié</span></td>
@@ -121,10 +111,7 @@
 
 							
 							<tr>
-								<td>
-									
-									<p>{{$affectation->nom}}</p>
-								</td>
+								<td>{{$affectation->nom}}</td>
 								<td>Structure d'affectation</td>
                                 <td>{{$affectation->deleted_at}}</td>
 								<td><span class="status pending">Supprimé</span></td>
@@ -136,33 +123,24 @@
             @if (- now()->diffInDays($stage->created_at)  < 1)
 						<tbody>
 							<tr>
-								<td>
-									
-									<p>{{$stage->theme}}</p>
-								</td>
+								<td>{{$stage->theme}}</td>
 								<td>Stage</td>
-                <td>{{$stage->created_at}}</td>
+               					<td>{{$stage->created_at}}</td>
 								<td><span class="status completed">Ajouté</span></td>
 							</tr>
               @endif
             @if (- now()->diffInDays($stage->updated_at)  < 1 && $stage->created_at != $stage->updated_at)
 							<tr>
-								<td>
-									
-									<p>{{$stage->theme}}</p>
-								</td>
+								<td>{{$stage->theme}}</td>
 								<td>Stage</td>
-                <td>{{$stage->updated_at}}</td>
+                                <td>{{$stage->updated_at}}</td>
 								<td><span class="status process">Modifié</span></td>
 							</tr>
               @endif
 			  @if (- now()->diffInDays($stage->deleted_at)  < 1)
 							
 							<tr>
-								<td>
-									
-									<p>{{$stage->theme}}</p>
-								</td>
+								<td>{{$stage->theme}}</td>
 								<td>Stage</td>
                                 <td>{{$stage->deleted_at}}</td>
 								<td><span class="status pending">Supprimé</span></td>
@@ -174,33 +152,24 @@
             @if (- now()->diffInDays($universite->created_at)  < 1)
 						<tbody>
 							<tr>
-								<td>
-									
-									<p>{{$universite->nom}}</p>
-								</td>
+								<td>{{$universite->nom}}</td>
 								<td>Université</td>
-                <td>{{$universite->created_at}}</td>
+               				    <td>{{$universite->created_at}}</td>
 								<td><span class="status completed">Ajouté</span></td>
 							</tr>
               @endif
             @if (- now()->diffInDays($universite->updated_at)  < 1 && $universite->created_at != $universite->updated_at)
 							<tr>
-								<td>
-									
-									<p>{{$universite->nom}}</p>
-								</td>
+								<td>{{$universite->nom}}</td>
 								<td>Université</td>
-                <td>{{$universite->updated_at}}</td>
+               				    <td>{{$universite->updated_at}}</td>
 								<td><span class="status process">Modifié</span></td>
 							</tr>
               @endif
 			  @if (- now()->diffInDays($universite->deleted_at)  < 1)
 							
 							<tr>
-								<td>
-									
-									<p>{{$universite->nom}}</p>
-								</td>
+								<td>{{$universite->nom}}</td>
 								<td>Université</td>
                                 <td>{{$universite->deleted_at}}</td>
 								<td><span class="status pending">Supprimé</span></td>
@@ -212,10 +181,7 @@
             @if (- now()->diffInDays($encadrant->created_at)  < 1)
 						<tbody>
 							<tr>
-								<td>
-									
-									<p>{{$encadrant->nom}}</p>
-								</td>
+								<td>{{$encadrant->nom}}</td>
 								<td>Encadrant</td>
                 <td>{{$encadrant->created_at}}</td>
 								<td><span class="status completed">Ajouté</span></td>
@@ -223,22 +189,16 @@
               @endif
             @if (- now()->diffInDays($encadrant->updated_at)  < 1 && $encadrant->created_at != $encadrant->updated_at)
 							<tr>
-								<td>
-									
-									<p>{{$encadrant->nom}}</p>
-								</td>
+								<td>{{$encadrant->nom}}</td>
 								<td>Encadrant</td>
-                <td>{{$encadrant->updated_at}}</td>
+              				    <td>{{$encadrant->updated_at}}</td>
 								<td><span class="status process">Modifié</span></td>
 							</tr>
               @endif
 			  @if (- now()->diffInDays($encadrant->deleted_at)  < 1)
 							
 							<tr>
-								<td>
-									
-									<p>{{$encadrant->nom}}</p>
-								</td>
+								<td>{{$encadrant->nom}}</td>
 								<td>Encadrant</td>
                                 <td>{{$encadrant->deleted_at}}</td>
 								<td><span class="status pending">Supprimé</span></td>
@@ -250,10 +210,7 @@
             @if (- now()->diffInDays($ecole->created_at)  < 1)
 						<tbody>
 							<tr>
-								<td>
-									
-									<p>{{$ecole->nom}}</p>
-								</td>
+								<td>{{$ecole->nom}}</td>
 								<td>Structure IAP</td>
                 <td>{{$ecole->created_at}}</td>
 								<td><span class="status completed">Ajouté</span></td>
@@ -261,22 +218,16 @@
               @endif
             @if (- now()->diffInDays($ecole->updated_at)  < 1 && $ecole->created_at != $ecole->updated_at)
 							<tr>
-								<td>
-									
-									<p>{{$ecole->nom}}</p>
-								</td>
+								<td>{{$ecole->nom}}</td>
 								<td>Structure IAP</td>
-                <td>{{$ecole->updated_at}}</td>
+               				    <td>{{$ecole->updated_at}}</td>
 								<td><span class="status process">Modifié</span></td>
 							</tr>
               @endif
 			  @if (- now()->diffInDays($ecole->deleted_at)  < 1)
 							
 							<tr>
-								<td>
-									
-									<p>{{$ecole->nom}}</p>
-								</td>
+								<td>{{$ecole->nom}}</td>
 								<td>Structure IAP</td>
                                 <td>{{$ecole->deleted_at}}</td>
 								<td><span class="status pending">Supprimé</span></td>
@@ -287,6 +238,7 @@
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------->
 						</tbody>
 					</table>
+				</div>
 				</div>
 				<div class="todo">
           
@@ -365,6 +317,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.scrollable-table {
+        max-height: 360px; /* Set the maximum height for the table */
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
 
 a {
 	text-decoration: none;
@@ -420,14 +376,6 @@ body {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
-
-
-
-
-
-
-
 
 
 /* MAIN */
@@ -581,21 +529,9 @@ body {
 #content main .table-data .order table td {
 	padding: 16px 0;
 }
-#content main .table-data .order table tr td:first-child {
-	display: flex;
-	align-items: center;
-	grid-gap: 12px;
-	padding-left: 6px;
-}
-#content main .table-data .order table td img {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-#content main .table-data .order table tbody tr:hover {
-	background: var(--grey);
-}
+
+
+
 #content main .table-data .order table tr td .status {
 	font-size: 10px;
 	padding: 6px 16px;
@@ -654,78 +590,4 @@ body {
 /* MAIN */
 /* CONTENT */
 
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-	#sidebar {
-		width: 200px;
-	}
-
-	#content {
-		width: calc(100% - 60px);
-		left: 200px;
-	}
-
-	#content nav .nav-link {
-		display: none;
-	}
-}
-
-
-
-
-
-
-@media screen and (max-width: 576px) {
-	#content nav form .form-input input {
-		display: none;
-	}
-
-	#content nav form .form-input button {
-		width: auto;
-		height: auto;
-		background: transparent;
-		border-radius: none;
-		color: var(--dark);
-	}
-
-	#content nav form.show .form-input input {
-		display: block;
-		width: 100%;
-	}
-	#content nav form.show .form-input button {
-		width: 36px;
-		height: 100%;
-		border-radius: 0 36px 36px 0;
-		color: var(--light);
-		background: var(--red);
-	}
-
-	#content nav form.show ~ .notification,
-	#content nav form.show ~ .profile {
-		display: none;
-	}
-
-	#content main .box-info {
-		grid-template-columns: 1fr;
-	}
-
-	#content main .table-data .head {
-		min-width: 420px;
-	}
-	#content main .table-data .order table {
-		min-width: 420px;
-	}
-	#content main .table-data .todo .todo-list {
-		min-width: 420px;
-	}
-}
     </style>

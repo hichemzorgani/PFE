@@ -91,6 +91,7 @@ Route::post('/search/research',[searchController::class,'show'])->name('search.s
 Route::get('/test',[TestController::class,'index'])->name('test.index');
 
 Route::get('/graphe',[GrapheController::class,'index'])->name('graphe.index');
+Route::post('/graphe/radio',[GrapheController::class,'radio'])->name('graphe.radio');
 
 
 

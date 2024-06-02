@@ -16,7 +16,10 @@
          Statist<span>iques </span>
     </h1>
 
+
+<div class="row" style="margin-bottom: 50px;">
     <section>
+    <div class="col-5">
         <div class="container1" id="skills">
             <h1 class="heading">Nombre des stages :</h1>
             <div class="Technical-bars">
@@ -108,8 +111,11 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="col-2"></div>
 
+    <div class="col-5">
         <div class="container1">
             <h1 class="heading1">Pourcentage des stages :</h1>
             <div class="radial-bars">
@@ -197,8 +203,9 @@
                 </div>
             </div>
         </div>
+    </div>
     </section>
-
+</div>
 
 </body>
 </html>
